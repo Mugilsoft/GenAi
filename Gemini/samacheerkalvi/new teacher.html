@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gemini AI Assistant</title>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Configure Tailwind to use Inter font -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        'primary-blue': '#1D4ED8', // Darker blue for accents
+                        'secondary-gray': '#F9FAFB', // Light gray background
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+        /* Custom scrollbar for a cleaner look */
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 8px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background-color: #CBD5E1; /* Slate 300 */
+            border-radius: 4px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background-color: #F1F5F9; /* Slate 100 */
+        }
+        /* Style for the generated content to handle line breaks properly */
+        #response-content {
+            white-space: pre-wrap;
+            word-wrap: break-word;
+        }
+    </style>
+</head>
+<body class="bg-secondary-gray min-h-screen font-sans antialiased flex justify-center py-8">
+
+    <div class="w-full max-w-4xl p-4 md:p-8 bg-white shadow-xl rounded-2xl">
+
+        <!-- Header -->
+        <header class="mb-8 text-center border-b pb-4">
+            <h1 class="text-3xl font-bold text-gray-900 flex items-center justify-center">
+                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-primary-blue mr-2">
+                    <path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2z"></path>
+                    <path d="M16 12l-4 4-4-4"></path>
+                    <path d="M12 8v8"></path>
+                </svg>
+                 Teacher Mugil AI Assistant
+            </h1>
+            <p class="text-gray-500 mt-1">Hi I am Mugil Ask any question and get a grounded, intelligent response.</p>
+        </header>
+
+        <!-- Input Area -->
+        <div class="mb-8">
+            <textarea id="prompt-input"
+                      class="w-full p-4 border border-gray-300 rounded-xl focus:ring-primary-blue focus:border-primary-blue transition duration-150 custom-scrollbar resize-none"
+                      rows="4"
+                      placeholder="Ask the AI model anything... (e.g., 'What are the three latest breakthroughs in renewable energy?')"></textarea>
+            <button id="generate-button"
+                    class="w-full mt-4 py-3 px-6 bg-primary-blue text-white font-semibold rounded-xl hover:bg-blue-700 transition duration-300 shadow-md disabled:bg-gray-400">
+                Generate Response
+            </button>
+        </div>
+
+        <!-- Output Area (Response) -->
+        <div class="bg-secondary-gray p-6 rounded-xl border border-gray-200">
+            <h2 class="text-xl font-semibold mb-4 text-gray-800 flex items-center">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-primary-blue mr-2">
+                    <path d="M2 12s3-4 10-4 10 4 10 4-3 4-10 4-10-4-10-4z"></path>
+                    <circle cx="12" cy="12" r="3"></circle>
+                </svg>
+                AI Response
+            </h2>
+            <div id="loading-indicator" class="hidden text-center py-4">
+                <div class="animate-spin rounded-full h-8 w-8 border-b-2 border-primary-blue inline-block"></div>
+                <p class="text-gray-500 mt-2">Thinking...</p>
+            </div>
+            <div id="response-content" class="text-gray-700 min-h-[50px]">
+                Type a query and click 'Generate Response' to see the AI's output here.
+            </div>
+
+            <!-- Grounding Sources -->
+            <div id="sources-container" class="mt-6 border-t pt-4 hidden">
+                <h3 class="text-sm font-medium text-gray-600 mb-2">Sources (Grounded by Google Search):</h3>
+                <ul id="sources-list" class="space-y-1 text-sm">
+                    <!-- Sources will be injected here -->
+                </ul>
+            </div>
+        </div>
+
+        <!-- Error Message Modal -->
+        <div id="error-modal" class="fixed inset-0 bg-gray-900 bg-opacity-75 z-50 hidden flex items-center justify-center">
+            <div class="bg-white p-6 rounded-xl shadow-2xl max-w-sm w-full mx-4">
+                <h3 class="text-lg font-bold text-red-600 mb-3">API Error</h3>
+                <p id="error-message" class="text-gray-700 mb-4">An unknown error occurred while trying to fetch the AI response.</p>
+                <button id="close-error-modal" class="w-full py-2 bg-red-600 text-white font-semibold rounded-lg hover:bg-red-700 transition">Close</button>
+            </div>
+        </div>
+
+    </div>
+
+    <script type="module">
+        // --- Configuration ---
+        const modelName = 'gemini-2.5-flash-preview-09-2025';
+        let apiKey = "AIzaSyDP7UnzsiujfI8bgpuTTVgVDgrofAfGG88"; // Will be populated by the environment if possible
+
+        // Check if a global API key variable exists (e.g., set by the canvas environment)
+        if (typeof __api_key !== 'undefined' && __api_key) {
+            apiKey = __api_key;
+        }
+        
+        const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/${modelName}:generateContent?key=${apiKey}`;
+
+        // --- DOM Elements ---
+        const promptInput = document.getElementById('prompt-input');
+        const generateButton = document.getElementById('generate-button');
+        const responseContent = document.getElementById('response-content');
+        const loadingIndicator = document.getElementById('loading-indicator');
+        const sourcesContainer = document.getElementById('sources-container');
+        const sourcesList = document.getElementById('sources-list');
+        const errorModal = document.getElementById('error-modal');
+        const errorMessage = document.getElementById('error-message');
+        const closeErrorModal = document.getElementById('close-error-modal');
+
+        // --- Event Listeners ---
+        generateButton.addEventListener('click', handleGeneration);
+        promptInput.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter' && !e.shiftKey) {
+                e.preventDefault();
+                handleGeneration();
+            }
+        });
+        closeErrorModal.addEventListener('click', () => {
+            errorModal.classList.add('hidden');
+        });
+
+        /**
+         * Custom utility function to show the modal error message instead of alert().
+         * @param {string} message - The error message to display.
+         */
+        function showCustomError(message) {
+            errorMessage.textContent = message;
+            errorModal.classList.remove('hidden');
+            console.error('API Error:', message);
+        }
+
+        /**
+         * Main function to handle the generation request.
+         */
+        async function handleGeneration() {
+            if (!apiKey) {
+                showCustomError("Authentication Error: API Key is missing. Please ensure the execution environment provides the Gemini API key.");
+                return;
+            }
+
+            const prompt = promptInput.value.trim();
+            if (!prompt) {
+                showCustomError("Please enter a prompt before clicking 'Generate Response'.");
+                return;
+            }
+
+            // Reset UI and show loading
+            responseContent.textContent = '';
+            sourcesList.innerHTML = '';
+            sourcesContainer.classList.add('hidden');
+            generateButton.disabled = true;
+            loadingIndicator.classList.remove('hidden');
+
+            try {
+                const response = await fetchWithExponentialBackoff(prompt);
+                const result = await response.json();
+
+                if (!response.ok) {
+                    // Specific check for the 'unregistered callers' error in the API response payload
+                    if (result.error?.message.includes("unregistered callers")) {
+                         throw new Error("Authentication failed. The API Key provided is invalid or the caller is unauthorized. Please verify your key configuration.");
+                    }
+                    throw new Error(result.error?.message || `API request failed with status ${response.status}`);
+                }
+
+                const candidate = result.candidates?.[0];
+
+                if (candidate && candidate.content?.parts?.[0]?.text) {
+                    const text = candidate.content.parts[0].text;
+                    responseContent.textContent = text;
+                    extractAndDisplaySources(candidate);
+                } else {
+                    responseContent.textContent = "I was unable to generate a response for that query. Please try again or rephrase your question. Check the console for model rejection details if necessary.";
+                }
+
+            } catch (error) {
+                showCustomError(`Failed to fetch response: ${error.message}`);
+                responseContent.textContent = "An error occurred. Please check the console for details.";
+            } finally {
+                // Restore UI state
+                generateButton.disabled = false;
+                loadingIndicator.classList.add('hidden');
+            }
+        }
+
+        /**
+         * Extracts and displays grounding sources from the candidate object.
+         * @param {Object} candidate - The candidate object from the Gemini API response.
+         */
+        function extractAndDisplaySources(candidate) {
+            let sources = [];
+            const groundingMetadata = candidate.groundingMetadata;
+
+            if (groundingMetadata && groundingMetadata.groundingAttributions) {
+                sources = groundingMetadata.groundingAttributions
+                    .map(attribution => ({
+                        uri: attribution.web?.uri,
+                        title: attribution.web?.title,
+                    }))
+                    .filter(source => source.uri && source.title); // Ensure sources are valid
+            }
+
+            if (sources.length > 0) {
+                sourcesContainer.classList.remove('hidden');
+                sources.forEach(source => {
+                    const listItem = document.createElement('li');
+                    listItem.classList.add('text-primary-blue', 'hover:text-blue-600', 'truncate');
+                    listItem.innerHTML = `<a href="${source.uri}" target="_blank" rel="noopener noreferrer" class="flex items-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-1 flex-shrink-0"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"></path><polyline points="10 17 15 12 10 7"></polyline><line x1="15" y1="12" x2="3" y2="12"></line></svg>
+                        <span title="${source.title} (${source.uri})">${source.title}</span>
+                    </a>`;
+                    sourcesList.appendChild(listItem);
+                });
+            }
+        }
+
+        /**
+         * Fetches API response with exponential backoff for retries.
+         * @param {string} userQuery - The user's prompt.
+         * @param {number} retries - Current retry count.
+         * @returns {Promise<Response>} - The successful response object.
+         */
+        async function fetchWithExponentialBackoff(userQuery, retries = 0) {
+            const maxRetries = 5;
+            const systemPrompt = "You are a concise, helpful, and friendly AI assistant. Provide accurate and well-structured answers.";
+
+            const payload = {
+                contents: [{ parts: [{ text: userQuery }] }],
+                tools: [{ "google_search": {} }], // Enable Google Search for grounding
+                systemInstruction: {
+                    parts: [{ text: systemPrompt }]
+                },
+            };
+
+            try {
+                const response = await fetch(apiUrl, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
+
+                if (response.status === 429 && retries < maxRetries) {
+                    const delay = Math.pow(2, retries) * 1000 + Math.random() * 1000;
+                    await new Promise(resolve => setTimeout(resolve, delay));
+                    return fetchWithExponentialBackoff(userQuery, retries + 1);
+                }
+
+                return response;
+
+            } catch (error) {
+                if (retries < maxRetries) {
+                    const delay = Math.pow(2, retries) * 1000 + Math.random() * 1000;
+                    await new Promise(resolve => setTimeout(resolve, delay));
+                    return fetchWithExponentialBackoff(userQuery, retries + 1);
+                }
+                throw new Error('Maximum retries exceeded. The API request failed due to a network or server issue.');
+            }
+        }
+
+        // Initialize the app on load
+        document.addEventListener('DOMContentLoaded', () => {
+            if (!apiKey) {
+                responseContent.textContent = "Error: API Key is not configured. Please check your environment settings.";
+                generateButton.disabled = true;
+            } else {
+                responseContent.textContent = "Ready! Ask me something.";
+            }
+        });
+    </script>
+</body>
+</html>
