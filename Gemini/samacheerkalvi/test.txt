@@ -1,1 +1,32 @@
+# Teacher Mugil AI Assistant
+
+Teacher Mugil AI Assistant is a web-based AI application that allows users to ask questions and receive intelligent responses using Google Gemini AI.
+
+## Features
+- AI-powered question answering
+- Google Search grounded responses
+- Clean UI using Tailwind CSS
+- Error handling and retry logic
+
+## Technology Stack
+- HTML5
+- Tailwind CSS
+- JavaScript
+- Google Gemini API
+- .NET Core (Backend – recommended)
+
+## Architecture
+User → Web UI → .NET Core API → Gemini API → Response
+
+## Security Note
+API keys should not be exposed in frontend code. Use backend proxy.
+
+## Future Enhancements
+- Authentication
+- Voice input
+- Tamil language support
+- Mobile application
+
+## Author
+Mugil Soft Solutions
 
