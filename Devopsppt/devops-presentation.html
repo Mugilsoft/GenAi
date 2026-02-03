@@ -1,0 +1,982 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DevOps: From Scratch to Autoscaling & Automation</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="presentation-styles.css">
+</head>
+<body>
+    <div class="presentation-container">
+        <!-- Slide Navigation -->
+        <div class="slide-controls">
+            <button id="prevBtn" class="nav-btn">← Previous</button>
+            <span id="slideCounter" class="slide-counter">1 / 20</span>
+            <button id="nextBtn" class="nav-btn">Next →</button>
+        </div>
+
+        <!-- Slide 1: Title Slide -->
+        <div class="slide active" data-slide="1">
+            <div class="slide-content title-slide">
+                <div class="title-gradient">
+                    <h1 class="main-title">DevOps</h1>
+                    <h2 class="subtitle">From Scratch to Autoscaling & Automation</h2>
+                </div>
+                <div class="title-meta">
+                    <p class="presenter">A Comprehensive Guide to Modern DevOps Practices</p>
+                    <p class="date" id="currentDate"></p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 2: Table of Contents -->
+        <div class="slide" data-slide="2">
+            <div class="slide-content">
+                <h2 class="slide-title">Table of Contents</h2>
+                <div class="toc-grid">
+                    <div class="toc-item">
+                        <span class="toc-number">01</span>
+                        <h3>Introduction to DevOps</h3>
+                    </div>
+                    <div class="toc-item">
+                        <span class="toc-number">02</span>
+                        <h3>Core Principles</h3>
+                    </div>
+                    <div class="toc-item">
+                        <span class="toc-number">03</span>
+                        <h3>DevOps Lifecycle</h3>
+                    </div>
+                    <div class="toc-item">
+                        <span class="toc-number">04</span>
+                        <h3>Version Control</h3>
+                    </div>
+                    <div class="toc-item">
+                        <span class="toc-number">05</span>
+                        <h3>CI/CD Pipeline</h3>
+                    </div>
+                    <div class="toc-item">
+                        <span class="toc-number">06</span>
+                        <h3>Containerization</h3>
+                    </div>
+                    <div class="toc-item">
+                        <span class="toc-number">07</span>
+                        <h3>Orchestration</h3>
+                    </div>
+                    <div class="toc-item">
+                        <span class="toc-number">08</span>
+                        <h3>Infrastructure as Code</h3>
+                    </div>
+                    <div class="toc-item">
+                        <span class="toc-number">09</span>
+                        <h3>Monitoring & Logging</h3>
+                    </div>
+                    <div class="toc-item">
+                        <span class="toc-number">10</span>
+                        <h3>Autoscaling</h3>
+                    </div>
+                    <div class="toc-item">
+                        <span class="toc-number">11</span>
+                        <h3>Automation Strategies</h3>
+                    </div>
+                    <div class="toc-item">
+                        <span class="toc-number">12</span>
+                        <h3>Best Practices</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 3: What is DevOps? -->
+        <div class="slide" data-slide="3">
+            <div class="slide-content">
+                <h2 class="slide-title">What is DevOps?</h2>
+                <div class="definition-box">
+                    <p class="definition-text">
+                        DevOps is a <strong>culture, philosophy, and set of practices</strong> that combines software development (Dev) 
+                        and IT operations (Ops) to shorten the systems development life cycle and provide continuous delivery 
+                        with high software quality.
+                    </p>
+                </div>
+                <div class="key-points">
+                    <div class="point-card">
+                        <div class="icon">🤝</div>
+                        <h3>Collaboration</h3>
+                        <p>Breaking down silos between development and operations teams</p>
+                    </div>
+                    <div class="point-card">
+                        <div class="icon">⚡</div>
+                        <h3>Speed</h3>
+                        <p>Faster time to market with continuous delivery</p>
+                    </div>
+                    <div class="point-card">
+                        <div class="icon">🔄</div>
+                        <h3>Automation</h3>
+                        <p>Automating repetitive tasks for efficiency</p>
+                    </div>
+                    <div class="point-card">
+                        <div class="icon">📊</div>
+                        <h3>Quality</h3>
+                        <p>Improved software quality through continuous testing</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 4: Core Principles -->
+        <div class="slide" data-slide="4">
+            <div class="slide-content">
+                <h2 class="slide-title">Core DevOps Principles</h2>
+                <div class="principles-container">
+                    <div class="principle-item">
+                        <div class="principle-header">
+                            <span class="principle-icon">🔄</span>
+                            <h3>Continuous Integration</h3>
+                        </div>
+                        <p>Regularly merging code changes into a central repository, followed by automated builds and tests</p>
+                    </div>
+                    <div class="principle-item">
+                        <div class="principle-header">
+                            <span class="principle-icon">🚀</span>
+                            <h3>Continuous Delivery</h3>
+                        </div>
+                        <p>Ensuring code is always in a deployable state and can be released at any time</p>
+                    </div>
+                    <div class="principle-item">
+                        <div class="principle-header">
+                            <span class="principle-icon">🤖</span>
+                            <h3>Automation</h3>
+                        </div>
+                        <p>Automating manual processes to increase efficiency and reduce human error</p>
+                    </div>
+                    <div class="principle-item">
+                        <div class="principle-header">
+                            <span class="principle-icon">📈</span>
+                            <h3>Monitoring & Feedback</h3>
+                        </div>
+                        <p>Continuous monitoring of applications and infrastructure with rapid feedback loops</p>
+                    </div>
+                    <div class="principle-item">
+                        <div class="principle-header">
+                            <span class="principle-icon">🛠️</span>
+                            <h3>Infrastructure as Code</h3>
+                        </div>
+                        <p>Managing and provisioning infrastructure through code rather than manual processes</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 5: DevOps Lifecycle -->
+        <div class="slide" data-slide="5">
+            <div class="slide-content">
+                <h2 class="slide-title">DevOps Lifecycle</h2>
+                <div class="lifecycle-diagram">
+                    <div class="lifecycle-circle">
+                        <div class="lifecycle-item" style="--rotation: 0deg;">
+                            <div class="lifecycle-content">
+                                <span class="lifecycle-icon">📝</span>
+                                <h4>Plan</h4>
+                            </div>
+                        </div>
+                        <div class="lifecycle-item" style="--rotation: 51.43deg;">
+                            <div class="lifecycle-content">
+                                <span class="lifecycle-icon">💻</span>
+                                <h4>Code</h4>
+                            </div>
+                        </div>
+                        <div class="lifecycle-item" style="--rotation: 102.86deg;">
+                            <div class="lifecycle-content">
+                                <span class="lifecycle-icon">🔨</span>
+                                <h4>Build</h4>
+                            </div>
+                        </div>
+                        <div class="lifecycle-item" style="--rotation: 154.29deg;">
+                            <div class="lifecycle-content">
+                                <span class="lifecycle-icon">🧪</span>
+                                <h4>Test</h4>
+                            </div>
+                        </div>
+                        <div class="lifecycle-item" style="--rotation: 205.71deg;">
+                            <div class="lifecycle-content">
+                                <span class="lifecycle-icon">🚀</span>
+                                <h4>Release</h4>
+                            </div>
+                        </div>
+                        <div class="lifecycle-item" style="--rotation: 257.14deg;">
+                            <div class="lifecycle-content">
+                                <span class="lifecycle-icon">📦</span>
+                                <h4>Deploy</h4>
+                            </div>
+                        </div>
+                        <div class="lifecycle-item" style="--rotation: 308.57deg;">
+                            <div class="lifecycle-content">
+                                <span class="lifecycle-icon">⚙️</span>
+                                <h4>Operate</h4>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="lifecycle-center">
+                        <span class="center-icon">♾️</span>
+                        <p>Continuous</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 6: Version Control -->
+        <div class="slide" data-slide="6">
+            <div class="slide-content">
+                <h2 class="slide-title">Version Control with Git</h2>
+                <div class="two-column-layout">
+                    <div class="column">
+                        <h3>Why Version Control?</h3>
+                        <ul class="feature-list">
+                            <li>Track changes over time</li>
+                            <li>Collaborate with team members</li>
+                            <li>Rollback to previous versions</li>
+                            <li>Branch and merge strategies</li>
+                            <li>Code review processes</li>
+                        </ul>
+                    </div>
+                    <div class="column">
+                        <h3>Popular Platforms</h3>
+                        <div class="platform-cards">
+                            <div class="platform-card">
+                                <h4>GitHub</h4>
+                                <p>Most popular platform with extensive integrations</p>
+                            </div>
+                            <div class="platform-card">
+                                <h4>GitLab</h4>
+                                <p>Complete DevOps platform with built-in CI/CD</p>
+                            </div>
+                            <div class="platform-card">
+                                <h4>Bitbucket</h4>
+                                <p>Atlassian's solution with Jira integration</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="code-example">
+                    <h4>Basic Git Workflow</h4>
+                    <pre><code>git clone &lt;repository-url&gt;
+git checkout -b feature/new-feature
+git add .
+git commit -m "Add new feature"
+git push origin feature/new-feature</code></pre>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 7: CI/CD Pipeline -->
+        <div class="slide" data-slide="7">
+            <div class="slide-content">
+                <h2 class="slide-title">CI/CD Pipeline</h2>
+                <div class="pipeline-flow">
+                    <div class="pipeline-stage">
+                        <div class="stage-icon">📝</div>
+                        <h4>Source</h4>
+                        <p>Code commit triggers pipeline</p>
+                    </div>
+                    <div class="pipeline-arrow">→</div>
+                    <div class="pipeline-stage">
+                        <div class="stage-icon">🔨</div>
+                        <h4>Build</h4>
+                        <p>Compile and package application</p>
+                    </div>
+                    <div class="pipeline-arrow">→</div>
+                    <div class="pipeline-stage">
+                        <div class="stage-icon">🧪</div>
+                        <h4>Test</h4>
+                        <p>Run automated tests</p>
+                    </div>
+                    <div class="pipeline-arrow">→</div>
+                    <div class="pipeline-stage">
+                        <div class="stage-icon">🚀</div>
+                        <h4>Deploy</h4>
+                        <p>Deploy to environment</p>
+                    </div>
+                </div>
+                <div class="tools-section">
+                    <h3>Popular CI/CD Tools</h3>
+                    <div class="tools-grid">
+                        <div class="tool-card">Jenkins</div>
+                        <div class="tool-card">GitLab CI</div>
+                        <div class="tool-card">GitHub Actions</div>
+                        <div class="tool-card">CircleCI</div>
+                        <div class="tool-card">Travis CI</div>
+                        <div class="tool-card">Azure DevOps</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 8: Containerization -->
+        <div class="slide" data-slide="8">
+            <div class="slide-content">
+                <h2 class="slide-title">Containerization with Docker</h2>
+                <div class="container-concept">
+                    <div class="concept-box">
+                        <h3>What are Containers?</h3>
+                        <p>Lightweight, standalone, executable packages that include everything needed to run an application: code, runtime, system tools, libraries, and settings.</p>
+                    </div>
+                </div>
+                <div class="benefits-grid">
+                    <div class="benefit-card">
+                        <span class="benefit-icon">📦</span>
+                        <h4>Portability</h4>
+                        <p>Run anywhere consistently</p>
+                    </div>
+                    <div class="benefit-card">
+                        <span class="benefit-icon">⚡</span>
+                        <h4>Efficiency</h4>
+                        <p>Lightweight and fast startup</p>
+                    </div>
+                    <div class="benefit-card">
+                        <span class="benefit-icon">🔒</span>
+                        <h4>Isolation</h4>
+                        <p>Secure application separation</p>
+                    </div>
+                    <div class="benefit-card">
+                        <span class="benefit-icon">📈</span>
+                        <h4>Scalability</h4>
+                        <p>Easy to scale up or down</p>
+                    </div>
+                </div>
+                <div class="code-example">
+                    <h4>Sample Dockerfile</h4>
+                    <pre><code>FROM node:18-alpine
+WORKDIR /app
+COPY package*.json ./
+RUN npm install
+COPY . .
+EXPOSE 3000
+CMD ["npm", "start"]</code></pre>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 9: Orchestration -->
+        <div class="slide" data-slide="9">
+            <div class="slide-content">
+                <h2 class="slide-title">Container Orchestration with Kubernetes</h2>
+                <div class="k8s-intro">
+                    <p class="intro-text">Kubernetes automates deployment, scaling, and management of containerized applications</p>
+                </div>
+                <div class="k8s-features">
+                    <div class="feature-box">
+                        <h4>🎯 Service Discovery & Load Balancing</h4>
+                        <p>Automatically distribute traffic across containers</p>
+                    </div>
+                    <div class="feature-box">
+                        <h4>📦 Storage Orchestration</h4>
+                        <p>Automatically mount storage systems of your choice</p>
+                    </div>
+                    <div class="feature-box">
+                        <h4>🔄 Automated Rollouts & Rollbacks</h4>
+                        <p>Deploy changes with zero downtime</p>
+                    </div>
+                    <div class="feature-box">
+                        <h4>🔧 Self-Healing</h4>
+                        <p>Restart failed containers automatically</p>
+                    </div>
+                    <div class="feature-box">
+                        <h4>🔐 Secret & Configuration Management</h4>
+                        <p>Store and manage sensitive information securely</p>
+                    </div>
+                    <div class="feature-box">
+                        <h4>📊 Horizontal Scaling</h4>
+                        <p>Scale applications up or down automatically</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 10: Infrastructure as Code -->
+        <div class="slide" data-slide="10">
+            <div class="slide-content">
+                <h2 class="slide-title">Infrastructure as Code (IaC)</h2>
+                <div class="iac-definition">
+                    <p>Managing and provisioning infrastructure through machine-readable definition files, rather than physical hardware configuration or interactive configuration tools.</p>
+                </div>
+                <div class="iac-benefits">
+                    <div class="iac-benefit">
+                        <span class="iac-icon">⚡</span>
+                        <h4>Speed</h4>
+                        <p>Provision infrastructure in minutes</p>
+                    </div>
+                    <div class="iac-benefit">
+                        <span class="iac-icon">🔄</span>
+                        <h4>Consistency</h4>
+                        <p>Eliminate configuration drift</p>
+                    </div>
+                    <div class="iac-benefit">
+                        <span class="iac-icon">📝</span>
+                        <h4>Version Control</h4>
+                        <p>Track infrastructure changes</p>
+                    </div>
+                    <div class="iac-benefit">
+                        <span class="iac-icon">🔁</span>
+                        <h4>Reusability</h4>
+                        <p>Reuse configurations across environments</p>
+                    </div>
+                </div>
+                <div class="iac-tools">
+                    <h3>Popular IaC Tools</h3>
+                    <div class="tools-comparison">
+                        <div class="tool-item">
+                            <h4>Terraform</h4>
+                            <p>Multi-cloud infrastructure provisioning</p>
+                        </div>
+                        <div class="tool-item">
+                            <h4>Ansible</h4>
+                            <p>Configuration management and automation</p>
+                        </div>
+                        <div class="tool-item">
+                            <h4>CloudFormation</h4>
+                            <p>AWS-specific infrastructure management</p>
+                        </div>
+                        <div class="tool-item">
+                            <h4>Pulumi</h4>
+                            <p>Infrastructure using programming languages</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 11: Monitoring & Logging -->
+        <div class="slide" data-slide="11">
+            <div class="slide-content">
+                <h2 class="slide-title">Monitoring & Logging</h2>
+                <div class="monitoring-intro">
+                    <p>Continuous monitoring ensures system health, performance, and security while providing insights for improvement.</p>
+                </div>
+                <div class="monitoring-types">
+                    <div class="monitoring-card">
+                        <h3>📊 Application Monitoring</h3>
+                        <ul>
+                            <li>Response times</li>
+                            <li>Error rates</li>
+                            <li>User experience metrics</li>
+                            <li>Transaction traces</li>
+                        </ul>
+                    </div>
+                    <div class="monitoring-card">
+                        <h3>🖥️ Infrastructure Monitoring</h3>
+                        <ul>
+                            <li>CPU & Memory usage</li>
+                            <li>Disk I/O</li>
+                            <li>Network traffic</li>
+                            <li>Server health</li>
+                        </ul>
+                    </div>
+                    <div class="monitoring-card">
+                        <h3>📝 Log Management</h3>
+                        <ul>
+                            <li>Centralized logging</li>
+                            <li>Log aggregation</li>
+                            <li>Search & analysis</li>
+                            <li>Alerting</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="monitoring-tools">
+                    <h3>Popular Tools</h3>
+                    <div class="tool-badges">
+                        <span class="badge">Prometheus</span>
+                        <span class="badge">Grafana</span>
+                        <span class="badge">ELK Stack</span>
+                        <span class="badge">Datadog</span>
+                        <span class="badge">New Relic</span>
+                        <span class="badge">Splunk</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 12: Autoscaling Fundamentals -->
+        <div class="slide" data-slide="12">
+            <div class="slide-content">
+                <h2 class="slide-title">Autoscaling Fundamentals</h2>
+                <div class="autoscaling-definition">
+                    <p class="highlight-text">Autoscaling automatically adjusts the number of computational resources based on the load, ensuring optimal performance and cost efficiency.</p>
+                </div>
+                <div class="scaling-types">
+                    <div class="scaling-card">
+                        <div class="scaling-header">
+                            <span class="scaling-icon">↔️</span>
+                            <h3>Horizontal Scaling</h3>
+                        </div>
+                        <p class="scaling-desc">Adding or removing instances</p>
+                        <ul class="scaling-points">
+                            <li>Scale out: Add more instances</li>
+                            <li>Scale in: Remove instances</li>
+                            <li>Better for stateless applications</li>
+                            <li>Improved fault tolerance</li>
+                        </ul>
+                    </div>
+                    <div class="scaling-card">
+                        <div class="scaling-header">
+                            <span class="scaling-icon">↕️</span>
+                            <h3>Vertical Scaling</h3>
+                        </div>
+                        <p class="scaling-desc">Increasing or decreasing instance size</p>
+                        <ul class="scaling-points">
+                            <li>Scale up: Increase resources</li>
+                            <li>Scale down: Decrease resources</li>
+                            <li>Simpler implementation</li>
+                            <li>Limited by hardware constraints</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 13: Autoscaling Strategies -->
+        <div class="slide" data-slide="13">
+            <div class="slide-content">
+                <h2 class="slide-title">Autoscaling Strategies</h2>
+                <div class="strategies-container">
+                    <div class="strategy-item">
+                        <div class="strategy-number">01</div>
+                        <div class="strategy-content">
+                            <h3>📈 Reactive Scaling</h3>
+                            <p>Scale based on current metrics (CPU, memory, request count)</p>
+                            <div class="strategy-example">
+                                <strong>Example:</strong> Scale up when CPU > 70% for 5 minutes
+                            </div>
+                        </div>
+                    </div>
+                    <div class="strategy-item">
+                        <div class="strategy-number">02</div>
+                        <div class="strategy-content">
+                            <h3>🔮 Predictive Scaling</h3>
+                            <p>Scale based on predicted future demand using ML</p>
+                            <div class="strategy-example">
+                                <strong>Example:</strong> Scale up before expected traffic spike
+                            </div>
+                        </div>
+                    </div>
+                    <div class="strategy-item">
+                        <div class="strategy-number">03</div>
+                        <div class="strategy-content">
+                            <h3>📅 Scheduled Scaling</h3>
+                            <p>Scale based on known patterns and schedules</p>
+                            <div class="strategy-example">
+                                <strong>Example:</strong> Scale up during business hours
+                            </div>
+                        </div>
+                    </div>
+                    <div class="strategy-item">
+                        <div class="strategy-number">04</div>
+                        <div class="strategy-content">
+                            <h3>🎯 Target Tracking</h3>
+                            <p>Maintain a specific metric at a target value</p>
+                            <div class="strategy-example">
+                                <strong>Example:</strong> Keep average CPU at 50%
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 14: Autoscaling Implementation -->
+        <div class="slide" data-slide="14">
+            <div class="slide-content">
+                <h2 class="slide-title">Autoscaling Implementation</h2>
+                <div class="implementation-tabs">
+                    <div class="tab-content">
+                        <h3>Kubernetes Horizontal Pod Autoscaler (HPA)</h3>
+                        <div class="code-example">
+                            <pre><code>apiVersion: autoscaling/v2
+kind: HorizontalPodAutoscaler
+metadata:
+  name: app-hpa
+spec:
+  scaleTargetRef:
+    apiVersion: apps/v1
+    kind: Deployment
+    name: my-app
+  minReplicas: 2
+  maxReplicas: 10
+  metrics:
+  - type: Resource
+    resource:
+      name: cpu
+      target:
+        type: Utilization
+        averageUtilization: 70</code></pre>
+                        </div>
+                    </div>
+                    <div class="tab-content">
+                        <h3>AWS Auto Scaling Group</h3>
+                        <div class="code-example">
+                            <pre><code>resource "aws_autoscaling_group" "app" {
+  name                = "app-asg"
+  min_size            = 2
+  max_size            = 10
+  desired_capacity    = 3
+  health_check_type   = "ELB"
+  
+  target_group_arns   = [aws_lb_target_group.app.arn]
+  vpc_zone_identifier = var.subnet_ids
+  
+  launch_template {
+    id      = aws_launch_template.app.id
+    version = "$Latest"
+  }
+}</code></pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 15: Automation in DevOps -->
+        <div class="slide" data-slide="15">
+            <div class="slide-content">
+                <h2 class="slide-title">Automation in DevOps</h2>
+                <div class="automation-intro">
+                    <p class="intro-highlight">Automation is the backbone of DevOps, enabling speed, consistency, and reliability.</p>
+                </div>
+                <div class="automation-areas">
+                    <div class="automation-area">
+                        <div class="area-icon">🔨</div>
+                        <h3>Build Automation</h3>
+                        <ul>
+                            <li>Automated compilation</li>
+                            <li>Dependency management</li>
+                            <li>Artifact generation</li>
+                            <li>Code quality checks</li>
+                        </ul>
+                    </div>
+                    <div class="automation-area">
+                        <div class="area-icon">🧪</div>
+                        <h3>Test Automation</h3>
+                        <ul>
+                            <li>Unit tests</li>
+                            <li>Integration tests</li>
+                            <li>End-to-end tests</li>
+                            <li>Performance tests</li>
+                        </ul>
+                    </div>
+                    <div class="automation-area">
+                        <div class="area-icon">🚀</div>
+                        <h3>Deployment Automation</h3>
+                        <ul>
+                            <li>Zero-downtime deployments</li>
+                            <li>Blue-green deployments</li>
+                            <li>Canary releases</li>
+                            <li>Rollback mechanisms</li>
+                        </ul>
+                    </div>
+                    <div class="automation-area">
+                        <div class="area-icon">🛠️</div>
+                        <h3>Infrastructure Automation</h3>
+                        <ul>
+                            <li>Provisioning</li>
+                            <li>Configuration management</li>
+                            <li>Scaling</li>
+                            <li>Disaster recovery</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 16: CI/CD Automation Pipeline -->
+        <div class="slide" data-slide="16">
+            <div class="slide-content">
+                <h2 class="slide-title">Complete CI/CD Automation Pipeline</h2>
+                <div class="pipeline-diagram">
+                    <div class="pipeline-step">
+                        <div class="step-header">
+                            <span class="step-number">1</span>
+                            <h4>Code Commit</h4>
+                        </div>
+                        <ul class="step-details">
+                            <li>Developer pushes code</li>
+                            <li>Webhook triggers pipeline</li>
+                        </ul>
+                    </div>
+                    <div class="pipeline-connector">↓</div>
+                    <div class="pipeline-step">
+                        <div class="step-header">
+                            <span class="step-number">2</span>
+                            <h4>Build & Test</h4>
+                        </div>
+                        <ul class="step-details">
+                            <li>Automated build</li>
+                            <li>Run unit tests</li>
+                            <li>Code quality analysis</li>
+                        </ul>
+                    </div>
+                    <div class="pipeline-connector">↓</div>
+                    <div class="pipeline-step">
+                        <div class="step-header">
+                            <span class="step-number">3</span>
+                            <h4>Security Scan</h4>
+                        </div>
+                        <ul class="step-details">
+                            <li>Vulnerability scanning</li>
+                            <li>Dependency checks</li>
+                            <li>SAST/DAST</li>
+                        </ul>
+                    </div>
+                    <div class="pipeline-connector">↓</div>
+                    <div class="pipeline-step">
+                        <div class="step-header">
+                            <span class="step-number">4</span>
+                            <h4>Deploy to Staging</h4>
+                        </div>
+                        <ul class="step-details">
+                            <li>Automated deployment</li>
+                            <li>Integration tests</li>
+                            <li>Smoke tests</li>
+                        </ul>
+                    </div>
+                    <div class="pipeline-connector">↓</div>
+                    <div class="pipeline-step">
+                        <div class="step-header">
+                            <span class="step-number">5</span>
+                            <h4>Deploy to Production</h4>
+                        </div>
+                        <ul class="step-details">
+                            <li>Approval gate</li>
+                            <li>Blue-green deployment</li>
+                            <li>Health checks</li>
+                        </ul>
+                    </div>
+                    <div class="pipeline-connector">↓</div>
+                    <div class="pipeline-step">
+                        <div class="step-header">
+                            <span class="step-number">6</span>
+                            <h4>Monitor & Alert</h4>
+                        </div>
+                        <ul class="step-details">
+                            <li>Performance monitoring</li>
+                            <li>Error tracking</li>
+                            <li>Automated alerts</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 17: Automation Tools Ecosystem -->
+        <div class="slide" data-slide="17">
+            <div class="slide-content">
+                <h2 class="slide-title">DevOps Automation Tools Ecosystem</h2>
+                <div class="tools-ecosystem">
+                    <div class="tool-category">
+                        <h3>🔄 CI/CD</h3>
+                        <div class="tool-list">
+                            <span class="tool-tag">Jenkins</span>
+                            <span class="tool-tag">GitLab CI</span>
+                            <span class="tool-tag">GitHub Actions</span>
+                            <span class="tool-tag">CircleCI</span>
+                            <span class="tool-tag">Azure Pipelines</span>
+                        </div>
+                    </div>
+                    <div class="tool-category">
+                        <h3>📦 Containerization</h3>
+                        <div class="tool-list">
+                            <span class="tool-tag">Docker</span>
+                            <span class="tool-tag">Podman</span>
+                            <span class="tool-tag">containerd</span>
+                        </div>
+                    </div>
+                    <div class="tool-category">
+                        <h3>🎯 Orchestration</h3>
+                        <div class="tool-list">
+                            <span class="tool-tag">Kubernetes</span>
+                            <span class="tool-tag">Docker Swarm</span>
+                            <span class="tool-tag">Nomad</span>
+                            <span class="tool-tag">OpenShift</span>
+                        </div>
+                    </div>
+                    <div class="tool-category">
+                        <h3>🛠️ Configuration Management</h3>
+                        <div class="tool-list">
+                            <span class="tool-tag">Ansible</span>
+                            <span class="tool-tag">Chef</span>
+                            <span class="tool-tag">Puppet</span>
+                            <span class="tool-tag">SaltStack</span>
+                        </div>
+                    </div>
+                    <div class="tool-category">
+                        <h3>🏗️ Infrastructure as Code</h3>
+                        <div class="tool-list">
+                            <span class="tool-tag">Terraform</span>
+                            <span class="tool-tag">Pulumi</span>
+                            <span class="tool-tag">CloudFormation</span>
+                            <span class="tool-tag">ARM Templates</span>
+                        </div>
+                    </div>
+                    <div class="tool-category">
+                        <h3>📊 Monitoring</h3>
+                        <div class="tool-list">
+                            <span class="tool-tag">Prometheus</span>
+                            <span class="tool-tag">Grafana</span>
+                            <span class="tool-tag">Datadog</span>
+                            <span class="tool-tag">New Relic</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 18: Best Practices -->
+        <div class="slide" data-slide="18">
+            <div class="slide-content">
+                <h2 class="slide-title">DevOps Best Practices</h2>
+                <div class="best-practices-grid">
+                    <div class="practice-card">
+                        <div class="practice-icon">🔄</div>
+                        <h3>Continuous Everything</h3>
+                        <p>Implement CI/CD for all projects, automate testing, and deploy frequently with small changes.</p>
+                    </div>
+                    <div class="practice-card">
+                        <div class="practice-icon">📝</div>
+                        <h3>Infrastructure as Code</h3>
+                        <p>Version control all infrastructure, use declarative configurations, and maintain environment parity.</p>
+                    </div>
+                    <div class="practice-card">
+                        <div class="practice-icon">📊</div>
+                        <h3>Monitor Everything</h3>
+                        <p>Implement comprehensive monitoring, set up meaningful alerts, and use observability tools.</p>
+                    </div>
+                    <div class="practice-card">
+                        <div class="practice-icon">🔒</div>
+                        <h3>Security First</h3>
+                        <p>Shift security left, automate security scanning, and implement least privilege access.</p>
+                    </div>
+                    <div class="practice-card">
+                        <div class="practice-icon">🤝</div>
+                        <h3>Collaboration</h3>
+                        <p>Break down silos, share knowledge, and foster a culture of shared responsibility.</p>
+                    </div>
+                    <div class="practice-card">
+                        <div class="practice-icon">📚</div>
+                        <h3>Documentation</h3>
+                        <p>Document processes, maintain runbooks, and keep documentation up-to-date.</p>
+                    </div>
+                    <div class="practice-card">
+                        <div class="practice-icon">🔍</div>
+                        <h3>Feedback Loops</h3>
+                        <p>Implement fast feedback mechanisms, learn from failures, and continuously improve.</p>
+                    </div>
+                    <div class="practice-card">
+                        <div class="practice-icon">🎯</div>
+                        <h3>Measure & Optimize</h3>
+                        <p>Track key metrics (DORA metrics), identify bottlenecks, and optimize continuously.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 19: Real-World Example -->
+        <div class="slide" data-slide="19">
+            <div class="slide-content">
+                <h2 class="slide-title">Real-World DevOps Implementation</h2>
+                <div class="example-scenario">
+                    <h3>Scenario: E-commerce Platform</h3>
+                    <p class="scenario-desc">A high-traffic e-commerce platform implementing complete DevOps automation</p>
+                </div>
+                <div class="implementation-flow">
+                    <div class="flow-section">
+                        <h4>🏗️ Infrastructure</h4>
+                        <ul>
+                            <li>Kubernetes cluster on AWS EKS</li>
+                            <li>Terraform for infrastructure provisioning</li>
+                            <li>Multi-region deployment for HA</li>
+                        </ul>
+                    </div>
+                    <div class="flow-section">
+                        <h4>🔄 CI/CD Pipeline</h4>
+                        <ul>
+                            <li>GitHub Actions for CI/CD</li>
+                            <li>Automated testing (unit, integration, e2e)</li>
+                            <li>Canary deployments with Flagger</li>
+                        </ul>
+                    </div>
+                    <div class="flow-section">
+                        <h4>📈 Autoscaling</h4>
+                        <ul>
+                            <li>HPA based on CPU and custom metrics</li>
+                            <li>Cluster autoscaler for node scaling</li>
+                            <li>Predictive scaling during sales events</li>
+                        </ul>
+                    </div>
+                    <div class="flow-section">
+                        <h4>📊 Monitoring</h4>
+                        <ul>
+                            <li>Prometheus + Grafana for metrics</li>
+                            <li>ELK stack for log aggregation</li>
+                            <li>Jaeger for distributed tracing</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="results-box">
+                    <h4>Results Achieved</h4>
+                    <div class="results-metrics">
+                        <div class="metric">
+                            <span class="metric-value">10x</span>
+                            <span class="metric-label">Faster Deployments</span>
+                        </div>
+                        <div class="metric">
+                            <span class="metric-value">99.9%</span>
+                            <span class="metric-label">Uptime</span>
+                        </div>
+                        <div class="metric">
+                            <span class="metric-value">40%</span>
+                            <span class="metric-label">Cost Reduction</span>
+                        </div>
+                        <div class="metric">
+                            <span class="metric-value">5min</span>
+                            <span class="metric-label">MTTR</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 20: Conclusion -->
+        <div class="slide" data-slide="20">
+            <div class="slide-content conclusion-slide">
+                <h2 class="slide-title">Key Takeaways</h2>
+                <div class="takeaways-container">
+                    <div class="takeaway-item">
+                        <span class="takeaway-number">1</span>
+                        <p>DevOps is a <strong>culture and mindset</strong>, not just tools and technologies</p>
+                    </div>
+                    <div class="takeaway-item">
+                        <span class="takeaway-number">2</span>
+                        <p><strong>Automation</strong> is essential for speed, consistency, and reliability</p>
+                    </div>
+                    <div class="takeaway-item">
+                        <span class="takeaway-number">3</span>
+                        <p><strong>Autoscaling</strong> ensures optimal performance and cost efficiency</p>
+                    </div>
+                    <div class="takeaway-item">
+                        <span class="takeaway-number">4</span>
+                        <p><strong>Continuous monitoring</strong> and feedback loops drive improvement</p>
+                    </div>
+                    <div class="takeaway-item">
+                        <span class="takeaway-number">5</span>
+                        <p>Start small, iterate, and <strong>continuously improve</strong></p>
+                    </div>
+                </div>
+                <div class="final-message">
+                    <h3>Thank You!</h3>
+                    <p class="closing-text">Questions & Discussion</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="presentation-script.js"></script>
+</body>
+</html>
