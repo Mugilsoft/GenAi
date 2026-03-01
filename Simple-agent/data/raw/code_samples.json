@@ -1,0 +1,119 @@
+[
+  {
+    "language":"csharp",
+    "framework":"dotnet8",
+    "description":"Create a simple API controller with GET endpoint",
+    "code":"using Microsoft.AspNetCore.Mvc;\n\nnamespace MyApi.Controllers;\n\n[ApiController]\n[Route(\"api\/[controller]\")]\npublic class ProductsController : ControllerBase\n{\n    [HttpGet]\n    public IActionResult GetAll()\n    {\n        return Ok(new { message = \"Products retrieved successfully\" });\n    }\n}",
+    "context":"ASP.NET Core 8 minimal API controller",
+    "category":"controller",
+    "id":1
+  },
+  {
+    "language":"csharp",
+    "framework":"dotnet8",
+    "description":"Create a service with dependency injection",
+    "code":"public interface IProductService\n{\n    Task<List<Product>> GetAllAsync();\n    Task<Product?> GetByIdAsync(int id);\n}\n\npublic class ProductService : IProductService\n{\n    private readonly ApplicationDbContext _context;\n\n    public ProductService(ApplicationDbContext context)\n    {\n        _context = context;\n    }\n\n    public async Task<List<Product>> GetAllAsync()\n    {\n        return await _context.Products.ToListAsync();\n    }\n\n    public async Task<Product?> GetByIdAsync(int id)\n    {\n        return await _context.Products.FindAsync(id);\n    }\n}",
+    "context":"Service pattern with Entity Framework Core",
+    "category":"service",
+    "id":2
+  },
+  {
+    "language":"csharp",
+    "framework":"dotnet8",
+    "description":"Create an Entity Framework model with relationships",
+    "code":"using System.ComponentModel.DataAnnotations;\n\npublic class Product\n{\n    [Key]\n    public int Id { get; set; }\n\n    [Required]\n    [MaxLength(100)]\n    public string Name { get; set; } = string.Empty;\n\n    public decimal Price { get; set; }\n\n    public int CategoryId { get; set; }\n    public Category? Category { get; set; }\n}\n\npublic class Category\n{\n    [Key]\n    public int Id { get; set; }\n\n    [Required]\n    public string Name { get; set; } = string.Empty;\n\n    public ICollection<Product> Products { get; set; } = new List<Product>();\n}",
+    "context":"EF Core entities with navigation properties",
+    "category":"model",
+    "id":3
+  },
+  {
+    "language":"csharp",
+    "framework":"dotnet8",
+    "description":"Configure JWT authentication in Program.cs",
+    "code":"using Microsoft.AspNetCore.Authentication.JwtBearer;\nusing Microsoft.IdentityModel.Tokens;\nusing System.Text;\n\nvar builder = WebApplication.CreateBuilder(args);\n\nbuilder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)\n    .AddJwtBearer(options =>\n    {\n        options.TokenValidationParameters = new TokenValidationParameters\n        {\n            ValidateIssuer = true,\n            ValidateAudience = true,\n            ValidateLifetime = true,\n            ValidateIssuerSigningKey = true,\n            ValidIssuer = builder.Configuration[\"Jwt:Issuer\"],\n            ValidAudience = builder.Configuration[\"Jwt:Audience\"],\n            IssuerSigningKey = new SymmetricSecurityKey(\n                Encoding.UTF8.GetBytes(builder.Configuration[\"Jwt:Key\"]!))\n        };\n    });\n\nvar app = builder.Build();\napp.UseAuthentication();\napp.UseAuthorization();\napp.Run();",
+    "context":"JWT authentication setup in .NET 8",
+    "category":"configuration",
+    "id":4
+  },
+  {
+    "language":"typescript",
+    "framework":"angular",
+    "description":"Create an Angular service with HTTP client",
+    "code":"import { Injectable } from '@angular\/core';\nimport { HttpClient } from '@angular\/common\/http';\nimport { Observable } from 'rxjs';\n\nexport interface Product {\n  id: number;\n  name: string;\n  price: number;\n}\n\n@Injectable({\n  providedIn: 'root'\n})\nexport class ProductService {\n  private apiUrl = 'api\/products';\n\n  constructor(private http: HttpClient) {}\n\n  getAll(): Observable<Product[]> {\n    return this.http.get<Product[]>(this.apiUrl);\n  }\n\n  getById(id: number): Observable<Product> {\n    return this.http.get<Product>(`${this.apiUrl}\/${id}`);\n  }\n\n  create(product: Product): Observable<Product> {\n    return this.http.post<Product>(this.apiUrl, product);\n  }\n}",
+    "context":"Angular service with HttpClient for API calls",
+    "category":"service",
+    "id":5
+  },
+  {
+    "language":"typescript",
+    "framework":"angular",
+    "description":"Create a standalone Angular component",
+    "code":"import { Component, OnInit } from '@angular\/core';\nimport { CommonModule } from '@angular\/common';\nimport { ProductService, Product } from '.\/product.service';\n\n@Component({\n  selector: 'app-product-list',\n  standalone: true,\n  imports: [CommonModule],\n  template: `\n    <div class=\"product-list\">\n      <h2>Products<\/h2>\n      <div *ngFor=\"let product of products\" class=\"product-item\">\n        <h3>{{ product.name }}<\/h3>\n        <p>Price: {{ product.price | currency }}<\/p>\n      <\/div>\n    <\/div>\n  `,\n  styles: [`\n    .product-list { padding: 20px; }\n    .product-item { margin: 10px 0; padding: 10px; border: 1px solid #ccc; }\n  `]\n})\nexport class ProductListComponent implements OnInit {\n  products: Product[] = [];\n\n  constructor(private productService: ProductService) {}\n\n  ngOnInit(): void {\n    this.loadProducts();\n  }\n\n  loadProducts(): void {\n    this.productService.getAll().subscribe({\n      next: (data) => this.products = data,\n      error: (err) => console.error('Error loading products', err)\n    });\n  }\n}",
+    "context":"Standalone Angular component with template",
+    "category":"component",
+    "id":6
+  },
+  {
+    "language":"typescript",
+    "framework":"angular",
+    "description":"Create a reactive form with validation",
+    "code":"import { Component } from '@angular\/core';\nimport { FormBuilder, FormGroup, Validators, ReactiveFormsModule } from '@angular\/forms';\nimport { CommonModule } from '@angular\/common';\n\n@Component({\n  selector: 'app-product-form',\n  standalone: true,\n  imports: [CommonModule, ReactiveFormsModule],\n  template: `\n    <form [formGroup]=\"productForm\" (ngSubmit)=\"onSubmit()\">\n      <div>\n        <label>Name:<\/label>\n        <input formControlName=\"name\" \/>\n        <div *ngIf=\"productForm.get('name')?.invalid && productForm.get('name')?.touched\">\n          <small>Name is required<\/small>\n        <\/div>\n      <\/div>\n      <div>\n        <label>Price:<\/label>\n        <input type=\"number\" formControlName=\"price\" \/>\n      <\/div>\n      <button type=\"submit\" [disabled]=\"productForm.invalid\">Submit<\/button>\n    <\/form>\n  `\n})\nexport class ProductFormComponent {\n  productForm: FormGroup;\n\n  constructor(private fb: FormBuilder) {\n    this.productForm = this.fb.group({\n      name: ['', [Validators.required, Validators.minLength(3)]],\n      price: [0, [Validators.required, Validators.min(0)]]\n    });\n  }\n\n  onSubmit(): void {\n    if (this.productForm.valid) {\n      console.log(this.productForm.value);\n    }\n  }\n}",
+    "context":"Reactive form with validation in Angular",
+    "category":"form",
+    "id":7
+  },
+  {
+    "language":"typescript",
+    "framework":"angular",
+    "description":"Create an Angular route guard",
+    "code":"import { Injectable } from '@angular\/core';\nimport { CanActivate, Router, ActivatedRouteSnapshot, RouterStateSnapshot } from '@angular\/router';\nimport { AuthService } from '.\/auth.service';\n\n@Injectable({\n  providedIn: 'root'\n})\nexport class AuthGuard implements CanActivate {\n  constructor(\n    private authService: AuthService,\n    private router: Router\n  ) {}\n\n  canActivate(\n    route: ActivatedRouteSnapshot,\n    state: RouterStateSnapshot\n  ): boolean {\n    if (this.authService.isAuthenticated()) {\n      return true;\n    }\n\n    this.router.navigate(['\/login'], {\n      queryParams: { returnUrl: state.url }\n    });\n    return false;\n  }\n}",
+    "context":"Route guard for authentication in Angular",
+    "category":"guard",
+    "id":8
+  },
+  {
+    "language":"sql",
+    "framework":"mssql",
+    "description":"Create a table with primary key and foreign key",
+    "code":"CREATE TABLE Products (\n    Id INT PRIMARY KEY IDENTITY(1,1),\n    Name NVARCHAR(100) NOT NULL,\n    Price DECIMAL(18,2) NOT NULL,\n    CategoryId INT NOT NULL,\n    CreatedAt DATETIME2 DEFAULT GETDATE(),\n    CONSTRAINT FK_Products_Category FOREIGN KEY (CategoryId) \n        REFERENCES Categories(Id) ON DELETE CASCADE\n);",
+    "context":"SQL Server table creation with constraints",
+    "category":"ddl",
+    "id":9
+  },
+  {
+    "language":"sql",
+    "framework":"mssql",
+    "description":"Select data with JOIN and WHERE clause",
+    "code":"SELECT \n    p.Id,\n    p.Name AS ProductName,\n    p.Price,\n    c.Name AS CategoryName\nFROM Products p\nINNER JOIN Categories c ON p.CategoryId = c.Id\nWHERE p.Price > 100\nORDER BY p.Price DESC;",
+    "context":"JOIN query with filtering and sorting",
+    "category":"query",
+    "id":10
+  },
+  {
+    "language":"sql",
+    "framework":"mssql",
+    "description":"Create a stored procedure with parameters",
+    "code":"CREATE PROCEDURE GetProductsByCategory\n    @CategoryId INT,\n    @MinPrice DECIMAL(18,2) = 0\nAS\nBEGIN\n    SET NOCOUNT ON;\n\n    SELECT \n        Id,\n        Name,\n        Price,\n        CategoryId\n    FROM Products\n    WHERE CategoryId = @CategoryId\n        AND Price >= @MinPrice\n    ORDER BY Name;\nEND;",
+    "context":"Stored procedure with input parameters",
+    "category":"procedure",
+    "id":11
+  },
+  {
+    "language":"sql",
+    "framework":"mssql",
+    "description":"Create an index for performance optimization",
+    "code":"CREATE NONCLUSTERED INDEX IX_Products_CategoryId_Price\nON Products (CategoryId, Price)\nINCLUDE (Name);",
+    "context":"Non-clustered index with included columns",
+    "category":"index",
+    "id":12
+  },
+  {
+    "language":"sql",
+    "framework":"mssql",
+    "description":"Use CTE for complex query",
+    "code":"WITH CategorySales AS (\n    SELECT \n        c.Id,\n        c.Name,\n        COUNT(p.Id) AS ProductCount,\n        SUM(p.Price) AS TotalValue\n    FROM Categories c\n    LEFT JOIN Products p ON c.Id = p.CategoryId\n    GROUP BY c.Id, c.Name\n)\nSELECT \n    Name,\n    ProductCount,\n    TotalValue,\n    CASE \n        WHEN TotalValue > 1000 THEN 'High Value'\n        WHEN TotalValue > 500 THEN 'Medium Value'\n        ELSE 'Low Value'\n    END AS ValueCategory\nFROM CategorySales\nORDER BY TotalValue DESC;",
+    "context":"Common Table Expression with aggregation",
+    "category":"query",
+    "id":13
+  }
+]

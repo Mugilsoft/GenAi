@@ -1,0 +1,31 @@
+{
+  "total_samples": 13,
+  "train_samples": 9,
+  "val_samples": 2,
+  "test_samples": 2,
+  "max_seq_length": 443,
+  "tokenizer": "microsoft/codebert-base",
+  "languages": [
+    "csharp",
+    "typescript",
+    "sql"
+  ],
+  "frameworks": [
+    "dotnet8",
+    "angular",
+    "mssql"
+  ],
+  "categories": [
+    "controller",
+    "service",
+    "model",
+    "configuration",
+    "component",
+    "form",
+    "guard",
+    "ddl",
+    "query",
+    "procedure",
+    "index"
+  ]
+}

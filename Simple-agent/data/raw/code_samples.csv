@@ -1,0 +1,288 @@
+language,framework,description,code,context,category,id
+csharp,dotnet8,Create a simple API controller with GET endpoint,"using Microsoft.AspNetCore.Mvc;
+
+namespace MyApi.Controllers;
+
+[ApiController]
+[Route(""api/[controller]"")]
+public class ProductsController : ControllerBase
+{
+    [HttpGet]
+    public IActionResult GetAll()
+    {
+        return Ok(new { message = ""Products retrieved successfully"" });
+    }
+}",ASP.NET Core 8 minimal API controller,controller,1
+csharp,dotnet8,Create a service with dependency injection,"public interface IProductService
+{
+    Task<List<Product>> GetAllAsync();
+    Task<Product?> GetByIdAsync(int id);
+}
+
+public class ProductService : IProductService
+{
+    private readonly ApplicationDbContext _context;
+
+    public ProductService(ApplicationDbContext context)
+    {
+        _context = context;
+    }
+
+    public async Task<List<Product>> GetAllAsync()
+    {
+        return await _context.Products.ToListAsync();
+    }
+
+    public async Task<Product?> GetByIdAsync(int id)
+    {
+        return await _context.Products.FindAsync(id);
+    }
+}",Service pattern with Entity Framework Core,service,2
+csharp,dotnet8,Create an Entity Framework model with relationships,"using System.ComponentModel.DataAnnotations;
+
+public class Product
+{
+    [Key]
+    public int Id { get; set; }
+
+    [Required]
+    [MaxLength(100)]
+    public string Name { get; set; } = string.Empty;
+
+    public decimal Price { get; set; }
+
+    public int CategoryId { get; set; }
+    public Category? Category { get; set; }
+}
+
+public class Category
+{
+    [Key]
+    public int Id { get; set; }
+
+    [Required]
+    public string Name { get; set; } = string.Empty;
+
+    public ICollection<Product> Products { get; set; } = new List<Product>();
+}",EF Core entities with navigation properties,model,3
+csharp,dotnet8,Configure JWT authentication in Program.cs,"using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.IdentityModel.Tokens;
+using System.Text;
+
+var builder = WebApplication.CreateBuilder(args);
+
+builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+    .AddJwtBearer(options =>
+    {
+        options.TokenValidationParameters = new TokenValidationParameters
+        {
+            ValidateIssuer = true,
+            ValidateAudience = true,
+            ValidateLifetime = true,
+            ValidateIssuerSigningKey = true,
+            ValidIssuer = builder.Configuration[""Jwt:Issuer""],
+            ValidAudience = builder.Configuration[""Jwt:Audience""],
+            IssuerSigningKey = new SymmetricSecurityKey(
+                Encoding.UTF8.GetBytes(builder.Configuration[""Jwt:Key""]!))
+        };
+    });
+
+var app = builder.Build();
+app.UseAuthentication();
+app.UseAuthorization();
+app.Run();",JWT authentication setup in .NET 8,configuration,4
+typescript,angular,Create an Angular service with HTTP client,"import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
+
+export interface Product {
+  id: number;
+  name: string;
+  price: number;
+}
+
+@Injectable({
+  providedIn: 'root'
+})
+export class ProductService {
+  private apiUrl = 'api/products';
+
+  constructor(private http: HttpClient) {}
+
+  getAll(): Observable<Product[]> {
+    return this.http.get<Product[]>(this.apiUrl);
+  }
+
+  getById(id: number): Observable<Product> {
+    return this.http.get<Product>(`${this.apiUrl}/${id}`);
+  }
+
+  create(product: Product): Observable<Product> {
+    return this.http.post<Product>(this.apiUrl, product);
+  }
+}",Angular service with HttpClient for API calls,service,5
+typescript,angular,Create a standalone Angular component,"import { Component, OnInit } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { ProductService, Product } from './product.service';
+
+@Component({
+  selector: 'app-product-list',
+  standalone: true,
+  imports: [CommonModule],
+  template: `
+    <div class=""product-list"">
+      <h2>Products</h2>
+      <div *ngFor=""let product of products"" class=""product-item"">
+        <h3>{{ product.name }}</h3>
+        <p>Price: {{ product.price | currency }}</p>
+      </div>
+    </div>
+  `,
+  styles: [`
+    .product-list { padding: 20px; }
+    .product-item { margin: 10px 0; padding: 10px; border: 1px solid #ccc; }
+  `]
+})
+export class ProductListComponent implements OnInit {
+  products: Product[] = [];
+
+  constructor(private productService: ProductService) {}
+
+  ngOnInit(): void {
+    this.loadProducts();
+  }
+
+  loadProducts(): void {
+    this.productService.getAll().subscribe({
+      next: (data) => this.products = data,
+      error: (err) => console.error('Error loading products', err)
+    });
+  }
+}",Standalone Angular component with template,component,6
+typescript,angular,Create a reactive form with validation,"import { Component } from '@angular/core';
+import { FormBuilder, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
+
+@Component({
+  selector: 'app-product-form',
+  standalone: true,
+  imports: [CommonModule, ReactiveFormsModule],
+  template: `
+    <form [formGroup]=""productForm"" (ngSubmit)=""onSubmit()"">
+      <div>
+        <label>Name:</label>
+        <input formControlName=""name"" />
+        <div *ngIf=""productForm.get('name')?.invalid && productForm.get('name')?.touched"">
+          <small>Name is required</small>
+        </div>
+      </div>
+      <div>
+        <label>Price:</label>
+        <input type=""number"" formControlName=""price"" />
+      </div>
+      <button type=""submit"" [disabled]=""productForm.invalid"">Submit</button>
+    </form>
+  `
+})
+export class ProductFormComponent {
+  productForm: FormGroup;
+
+  constructor(private fb: FormBuilder) {
+    this.productForm = this.fb.group({
+      name: ['', [Validators.required, Validators.minLength(3)]],
+      price: [0, [Validators.required, Validators.min(0)]]
+    });
+  }
+
+  onSubmit(): void {
+    if (this.productForm.valid) {
+      console.log(this.productForm.value);
+    }
+  }
+}",Reactive form with validation in Angular,form,7
+typescript,angular,Create an Angular route guard,"import { Injectable } from '@angular/core';
+import { CanActivate, Router, ActivatedRouteSnapshot, RouterStateSnapshot } from '@angular/router';
+import { AuthService } from './auth.service';
+
+@Injectable({
+  providedIn: 'root'
+})
+export class AuthGuard implements CanActivate {
+  constructor(
+    private authService: AuthService,
+    private router: Router
+  ) {}
+
+  canActivate(
+    route: ActivatedRouteSnapshot,
+    state: RouterStateSnapshot
+  ): boolean {
+    if (this.authService.isAuthenticated()) {
+      return true;
+    }
+
+    this.router.navigate(['/login'], {
+      queryParams: { returnUrl: state.url }
+    });
+    return false;
+  }
+}",Route guard for authentication in Angular,guard,8
+sql,mssql,Create a table with primary key and foreign key,"CREATE TABLE Products (
+    Id INT PRIMARY KEY IDENTITY(1,1),
+    Name NVARCHAR(100) NOT NULL,
+    Price DECIMAL(18,2) NOT NULL,
+    CategoryId INT NOT NULL,
+    CreatedAt DATETIME2 DEFAULT GETDATE(),
+    CONSTRAINT FK_Products_Category FOREIGN KEY (CategoryId) 
+        REFERENCES Categories(Id) ON DELETE CASCADE
+);",SQL Server table creation with constraints,ddl,9
+sql,mssql,Select data with JOIN and WHERE clause,"SELECT 
+    p.Id,
+    p.Name AS ProductName,
+    p.Price,
+    c.Name AS CategoryName
+FROM Products p
+INNER JOIN Categories c ON p.CategoryId = c.Id
+WHERE p.Price > 100
+ORDER BY p.Price DESC;",JOIN query with filtering and sorting,query,10
+sql,mssql,Create a stored procedure with parameters,"CREATE PROCEDURE GetProductsByCategory
+    @CategoryId INT,
+    @MinPrice DECIMAL(18,2) = 0
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    SELECT 
+        Id,
+        Name,
+        Price,
+        CategoryId
+    FROM Products
+    WHERE CategoryId = @CategoryId
+        AND Price >= @MinPrice
+    ORDER BY Name;
+END;",Stored procedure with input parameters,procedure,11
+sql,mssql,Create an index for performance optimization,"CREATE NONCLUSTERED INDEX IX_Products_CategoryId_Price
+ON Products (CategoryId, Price)
+INCLUDE (Name);",Non-clustered index with included columns,index,12
+sql,mssql,Use CTE for complex query,"WITH CategorySales AS (
+    SELECT 
+        c.Id,
+        c.Name,
+        COUNT(p.Id) AS ProductCount,
+        SUM(p.Price) AS TotalValue
+    FROM Categories c
+    LEFT JOIN Products p ON c.Id = p.CategoryId
+    GROUP BY c.Id, c.Name
+)
+SELECT 
+    Name,
+    ProductCount,
+    TotalValue,
+    CASE 
+        WHEN TotalValue > 1000 THEN 'High Value'
+        WHEN TotalValue > 500 THEN 'Medium Value'
+        ELSE 'Low Value'
+    END AS ValueCategory
+FROM CategorySales
+ORDER BY TotalValue DESC;",Common Table Expression with aggregation,query,13

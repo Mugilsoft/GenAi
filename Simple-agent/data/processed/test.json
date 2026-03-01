@@ -1,0 +1,20 @@
+[
+  {
+    "language":"sql",
+    "framework":"mssql",
+    "category":"procedure",
+    "description":"Create a stored procedure with parameters",
+    "context":"Stored procedure with input parameters",
+    "input":"Language: sql\nFramework: mssql\nTask: Create a stored procedure with parameters\nContext: Stored procedure with input parameters\n",
+    "output":"CREATE PROCEDURE GetProductsByCategory\n    @CategoryId INT,\n    @MinPrice DECIMAL(18,2) = 0\nAS\nBEGIN\n    SET NOCOUNT ON;\n\n    SELECT \n        Id,\n        Name,\n        Price,\n        CategoryId\n    FROM Products\n    WHERE CategoryId = @CategoryId\n        AND Price >= @MinPrice\n    ORDER BY Name;\nEND;"
+  },
+  {
+    "language":"csharp",
+    "framework":"dotnet8",
+    "category":"configuration",
+    "description":"Configure JWT authentication in Program.cs",
+    "context":"JWT authentication setup in .NET 8",
+    "input":"Language: csharp\nFramework: dotnet8\nTask: Configure JWT authentication in Program.cs\nContext: JWT authentication setup in .NET 8\n",
+    "output":"using Microsoft.AspNetCore.Authentication.JwtBearer;\nusing Microsoft.IdentityModel.Tokens;\nusing System.Text;\n\nvar builder = WebApplication.CreateBuilder(args);\n\nbuilder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)\n    .AddJwtBearer(options =>\n    {\n        options.TokenValidationParameters = new TokenValidationParameters\n        {\n            ValidateIssuer = true,\n            ValidateAudience = true,\n            ValidateLifetime = true,\n            ValidateIssuerSigningKey = true,\n            ValidIssuer = builder.Configuration[\"Jwt:Issuer\"],\n            ValidAudience = builder.Configuration[\"Jwt:Audience\"],\n            IssuerSigningKey = new SymmetricSecurityKey(\n                Encoding.UTF8.GetBytes(builder.Configuration[\"Jwt:Key\"]!))\n        };\n    });\n\nvar app = builder.Build();\napp.UseAuthentication();\napp.UseAuthorization();\napp.Run();"
+  }
+]
