@@ -1,0 +1,1441 @@
+instruction,response,language
+Create EF Core DbSet for Sales,public DbSet<Sales> Saless { get; set; },.NET
+Create Angular form for Category,"this.form = this.fb.group({ name: ['', Validators.required] });",Angular
+Write SQL query to get all Category,SELECT * FROM Category;,SQL
+Create a C# class for Product,public class Product { public int Id { get; set; } public string Name { get; set; } },.NET
+Create a C# class for Purchase,public class Purchase { public int Id { get; set; } public string Name { get; set; } },.NET
+Create Angular form for Order,"this.form = this.fb.group({ name: ['', Validators.required] });",Angular
+Create Angular service for Order,"@Injectable({ providedIn: 'root' })
+export class OrderService { constructor(private http: HttpClient) { } }",Angular
+Write SQL query to get all Employee,SELECT * FROM Employee;,SQL
+Write SQL query to get all Sales,SELECT * FROM Sales;,SQL
+Write SQL query to get all Order,SELECT * FROM Order;,SQL
+Write SQL insert query for Stock,INSERT INTO Stock (Name) VALUES ('John');,SQL
+Create EF Core DbSet for Invoice,public DbSet<Invoice> Invoices { get; set; },.NET
+Create a C# class for Purchase,public class Purchase { public int Id { get; set; } public string Name { get; set; } },.NET
+Write SQL join query between Employee and Orders,SELECT * FROM Employee e JOIN Orders o ON e.Id = o.EmployeeId;,SQL
+Write SQL join query between Sales and Orders,SELECT * FROM Sales e JOIN Orders o ON e.Id = o.SalesId;,SQL
+Write SQL query to get all Product,SELECT * FROM Product;,SQL
+Write SQL insert query for Product,INSERT INTO Product (Name) VALUES ('John');,SQL
+Create Angular service for Product,"@Injectable({ providedIn: 'root' })
+export class ProductService { constructor(private http: HttpClient) { } }",Angular
+Create a C# class for Stock,public class Stock { public int Id { get; set; } public string Name { get; set; } },.NET
+Create Angular form for Stock,"this.form = this.fb.group({ name: ['', Validators.required] });",Angular
+Write SQL join query between Sales and Orders,SELECT * FROM Sales e JOIN Orders o ON e.Id = o.SalesId;,SQL
+Create Angular service for Order,"@Injectable({ providedIn: 'root' })
+export class OrderService { constructor(private http: HttpClient) { } }",Angular
+Create Angular component for Sales,"@Component({ selector: 'app-sales', templateUrl: './sales.component.html' })
+export class SalesComponent { }",Angular
+Create a C# class for Invoice,public class Invoice { public int Id { get; set; } public string Name { get; set; } },.NET
+Create a C# class for Purchase,public class Purchase { public int Id { get; set; } public string Name { get; set; } },.NET
+Create ASP.NET Core controller for Customer,"[ApiController]
+[Route(""api/[controller]"")]
+public class CustomerController : ControllerBase { }",.NET
+Write SQL join query between Category and Orders,SELECT * FROM Category e JOIN Orders o ON e.Id = o.CategoryId;,SQL
+Create Angular form for Customer,"this.form = this.fb.group({ name: ['', Validators.required] });",Angular
+Write SQL insert query for Customer,INSERT INTO Customer (Name) VALUES ('John');,SQL
+Create Angular form for Invoice,"this.form = this.fb.group({ name: ['', Validators.required] });",Angular
+Create EF Core DbSet for Employee,public DbSet<Employee> Employees { get; set; },.NET
+Create Angular component for Sales,"@Component({ selector: 'app-sales', templateUrl: './sales.component.html' })
+export class SalesComponent { }",Angular
+Create Angular form for Invoice,"this.form = this.fb.group({ name: ['', Validators.required] });",Angular
+Write SQL join query between Invoice and Orders,SELECT * FROM Invoice e JOIN Orders o ON e.Id = o.InvoiceId;,SQL
+Create a C# class for Customer,public class Customer { public int Id { get; set; } public string Name { get; set; } },.NET
+Create Angular component for Product,"@Component({ selector: 'app-product', templateUrl: './product.component.html' })
+export class ProductComponent { }",Angular
+Write SQL join query between Product and Orders,SELECT * FROM Product e JOIN Orders o ON e.Id = o.ProductId;,SQL
+Create a C# class for Employee,public class Employee { public int Id { get; set; } public string Name { get; set; } },.NET
+Create EF Core DbSet for Product,public DbSet<Product> Products { get; set; },.NET
+Create Angular form for Invoice,"this.form = this.fb.group({ name: ['', Validators.required] });",Angular
+Write SQL query to get all Invoice,SELECT * FROM Invoice;,SQL
+Write SQL join query between Purchase and Orders,SELECT * FROM Purchase e JOIN Orders o ON e.Id = o.PurchaseId;,SQL
+Create EF Core DbSet for Stock,public DbSet<Stock> Stocks { get; set; },.NET
+Write SQL join query between Stock and Orders,SELECT * FROM Stock e JOIN Orders o ON e.Id = o.StockId;,SQL
+Write SQL query to get all Invoice,SELECT * FROM Invoice;,SQL
+Create Angular component for Category,"@Component({ selector: 'app-category', templateUrl: './category.component.html' })
+export class CategoryComponent { }",Angular
+Write SQL query to get all Purchase,SELECT * FROM Purchase;,SQL
+Create Angular service for Stock,"@Injectable({ providedIn: 'root' })
+export class StockService { constructor(private http: HttpClient) { } }",Angular
+Create a C# class for Order,public class Order { public int Id { get; set; } public string Name { get; set; } },.NET
+Create Angular component for Employee,"@Component({ selector: 'app-employee', templateUrl: './employee.component.html' })
+export class EmployeeComponent { }",Angular
+Create a C# class for Customer,public class Customer { public int Id { get; set; } public string Name { get; set; } },.NET
+Create ASP.NET Core controller for Employee,"[ApiController]
+[Route(""api/[controller]"")]
+public class EmployeeController : ControllerBase { }",.NET
+Write SQL query to get all Category,SELECT * FROM Category;,SQL
+Create Angular form for Category,"this.form = this.fb.group({ name: ['', Validators.required] });",Angular
+Create Angular component for Employee,"@Component({ selector: 'app-employee', templateUrl: './employee.component.html' })
+export class EmployeeComponent { }",Angular
+Create ASP.NET Core controller for Customer,"[ApiController]
+[Route(""api/[controller]"")]
+public class CustomerController : ControllerBase { }",.NET
+Write SQL query to get all Customer,SELECT * FROM Customer;,SQL
+Write SQL join query between Product and Orders,SELECT * FROM Product e JOIN Orders o ON e.Id = o.ProductId;,SQL
+Write SQL join query between Sales and Orders,SELECT * FROM Sales e JOIN Orders o ON e.Id = o.SalesId;,SQL
+Create Angular component for Sales,"@Component({ selector: 'app-sales', templateUrl: './sales.component.html' })
+export class SalesComponent { }",Angular
+Create ASP.NET Core controller for Purchase,"[ApiController]
+[Route(""api/[controller]"")]
+public class PurchaseController : ControllerBase { }",.NET
+Create Angular service for Employee,"@Injectable({ providedIn: 'root' })
+export class EmployeeService { constructor(private http: HttpClient) { } }",Angular
+Write SQL join query between Product and Orders,SELECT * FROM Product e JOIN Orders o ON e.Id = o.ProductId;,SQL
+Write SQL join query between Stock and Orders,SELECT * FROM Stock e JOIN Orders o ON e.Id = o.StockId;,SQL
+Write SQL insert query for Product,INSERT INTO Product (Name) VALUES ('John');,SQL
+Write SQL join query between Employee and Orders,SELECT * FROM Employee e JOIN Orders o ON e.Id = o.EmployeeId;,SQL
+Create Angular service for Invoice,"@Injectable({ providedIn: 'root' })
+export class InvoiceService { constructor(private http: HttpClient) { } }",Angular
+Write SQL query to get all Employee,SELECT * FROM Employee;,SQL
+Create Angular form for Purchase,"this.form = this.fb.group({ name: ['', Validators.required] });",Angular
+Create ASP.NET Core controller for Stock,"[ApiController]
+[Route(""api/[controller]"")]
+public class StockController : ControllerBase { }",.NET
+Create Angular service for Sales,"@Injectable({ providedIn: 'root' })
+export class SalesService { constructor(private http: HttpClient) { } }",Angular
+Create Angular service for Invoice,"@Injectable({ providedIn: 'root' })
+export class InvoiceService { constructor(private http: HttpClient) { } }",Angular
+Create ASP.NET Core controller for Sales,"[ApiController]
+[Route(""api/[controller]"")]
+public class SalesController : ControllerBase { }",.NET
+Write SQL insert query for Stock,INSERT INTO Stock (Name) VALUES ('John');,SQL
+Create ASP.NET Core controller for Order,"[ApiController]
+[Route(""api/[controller]"")]
+public class OrderController : ControllerBase { }",.NET
+Create Angular form for Invoice,"this.form = this.fb.group({ name: ['', Validators.required] });",Angular
+Create Angular service for Customer,"@Injectable({ providedIn: 'root' })
+export class CustomerService { constructor(private http: HttpClient) { } }",Angular
+Create Angular form for Product,"this.form = this.fb.group({ name: ['', Validators.required] });",Angular
+Write SQL insert query for Employee,INSERT INTO Employee (Name) VALUES ('John');,SQL
+Create EF Core DbSet for Order,public DbSet<Order> Orders { get; set; },.NET
+Create a C# class for Sales,public class Sales { public int Id { get; set; } public string Name { get; set; } },.NET
+Create a C# class for Employee,public class Employee { public int Id { get; set; } public string Name { get; set; } },.NET
+Create a C# class for Sales,public class Sales { public int Id { get; set; } public string Name { get; set; } },.NET
+Write SQL join query between Invoice and Orders,SELECT * FROM Invoice e JOIN Orders o ON e.Id = o.InvoiceId;,SQL
+Create Angular component for Customer,"@Component({ selector: 'app-customer', templateUrl: './customer.component.html' })
+export class CustomerComponent { }",Angular
+Write SQL join query between Employee and Orders,SELECT * FROM Employee e JOIN Orders o ON e.Id = o.EmployeeId;,SQL
+Write SQL join query between Employee and Orders,SELECT * FROM Employee e JOIN Orders o ON e.Id = o.EmployeeId;,SQL
+Write SQL insert query for Employee,INSERT INTO Employee (Name) VALUES ('John');,SQL
+Create a C# class for Category,public class Category { public int Id { get; set; } public string Name { get; set; } },.NET
+Write SQL insert query for Sales,INSERT INTO Sales (Name) VALUES ('John');,SQL
+Write SQL query to get all Purchase,SELECT * FROM Purchase;,SQL
+Create Angular form for Purchase,"this.form = this.fb.group({ name: ['', Validators.required] });",Angular
+Write SQL insert query for Product,INSERT INTO Product (Name) VALUES ('John');,SQL
+Write SQL insert query for Employee,INSERT INTO Employee (Name) VALUES ('John');,SQL
+Create ASP.NET Core controller for Sales,"[ApiController]
+[Route(""api/[controller]"")]
+public class SalesController : ControllerBase { }",.NET
+Write SQL query to get all Employee,SELECT * FROM Employee;,SQL
+Create Angular component for Customer,"@Component({ selector: 'app-customer', templateUrl: './customer.component.html' })
+export class CustomerComponent { }",Angular
+Write SQL query to get all Stock,SELECT * FROM Stock;,SQL
+Create Angular service for Invoice,"@Injectable({ providedIn: 'root' })
+export class InvoiceService { constructor(private http: HttpClient) { } }",Angular
+Create Angular form for Category,"this.form = this.fb.group({ name: ['', Validators.required] });",Angular
+Create a C# class for Customer,public class Customer { public int Id { get; set; } public string Name { get; set; } },.NET
+Create ASP.NET Core controller for Purchase,"[ApiController]
+[Route(""api/[controller]"")]
+public class PurchaseController : ControllerBase { }",.NET
+Create Angular component for Category,"@Component({ selector: 'app-category', templateUrl: './category.component.html' })
+export class CategoryComponent { }",Angular
+Create a C# class for Order,public class Order { public int Id { get; set; } public string Name { get; set; } },.NET
+Create ASP.NET Core controller for Purchase,"[ApiController]
+[Route(""api/[controller]"")]
+public class PurchaseController : ControllerBase { }",.NET
+Create Angular form for Employee,"this.form = this.fb.group({ name: ['', Validators.required] });",Angular
+Create Angular component for Stock,"@Component({ selector: 'app-stock', templateUrl: './stock.component.html' })
+export class StockComponent { }",Angular
+Create Angular form for Customer,"this.form = this.fb.group({ name: ['', Validators.required] });",Angular
+Write SQL insert query for Stock,INSERT INTO Stock (Name) VALUES ('John');,SQL
+Write SQL query to get all Sales,SELECT * FROM Sales;,SQL
+Create Angular service for Customer,"@Injectable({ providedIn: 'root' })
+export class CustomerService { constructor(private http: HttpClient) { } }",Angular
+Create Angular component for Customer,"@Component({ selector: 'app-customer', templateUrl: './customer.component.html' })
+export class CustomerComponent { }",Angular
+Create Angular form for Product,"this.form = this.fb.group({ name: ['', Validators.required] });",Angular
+Write SQL query to get all Stock,SELECT * FROM Stock;,SQL
+Create EF Core DbSet for Invoice,public DbSet<Invoice> Invoices { get; set; },.NET
+Write SQL join query between Invoice and Orders,SELECT * FROM Invoice e JOIN Orders o ON e.Id = o.InvoiceId;,SQL
+Write SQL join query between Stock and Orders,SELECT * FROM Stock e JOIN Orders o ON e.Id = o.StockId;,SQL
+Write SQL join query between Product and Orders,SELECT * FROM Product e JOIN Orders o ON e.Id = o.ProductId;,SQL
+Create EF Core DbSet for Employee,public DbSet<Employee> Employees { get; set; },.NET
+Write SQL join query between Customer and Orders,SELECT * FROM Customer e JOIN Orders o ON e.Id = o.CustomerId;,SQL
+Write SQL query to get all Category,SELECT * FROM Category;,SQL
+Write SQL insert query for Category,INSERT INTO Category (Name) VALUES ('John');,SQL
+Create Angular form for Order,"this.form = this.fb.group({ name: ['', Validators.required] });",Angular
+Write SQL join query between Stock and Orders,SELECT * FROM Stock e JOIN Orders o ON e.Id = o.StockId;,SQL
+Write SQL insert query for Sales,INSERT INTO Sales (Name) VALUES ('John');,SQL
+Write SQL join query between Employee and Orders,SELECT * FROM Employee e JOIN Orders o ON e.Id = o.EmployeeId;,SQL
+Write SQL join query between Employee and Orders,SELECT * FROM Employee e JOIN Orders o ON e.Id = o.EmployeeId;,SQL
+Create Angular component for Employee,"@Component({ selector: 'app-employee', templateUrl: './employee.component.html' })
+export class EmployeeComponent { }",Angular
+Write SQL query to get all Category,SELECT * FROM Category;,SQL
+Create Angular service for Employee,"@Injectable({ providedIn: 'root' })
+export class EmployeeService { constructor(private http: HttpClient) { } }",Angular
+Create ASP.NET Core controller for Customer,"[ApiController]
+[Route(""api/[controller]"")]
+public class CustomerController : ControllerBase { }",.NET
+Write SQL query to get all Invoice,SELECT * FROM Invoice;,SQL
+Write SQL join query between Invoice and Orders,SELECT * FROM Invoice e JOIN Orders o ON e.Id = o.InvoiceId;,SQL
+Create ASP.NET Core controller for Category,"[ApiController]
+[Route(""api/[controller]"")]
+public class CategoryController : ControllerBase { }",.NET
+Create Angular service for Invoice,"@Injectable({ providedIn: 'root' })
+export class InvoiceService { constructor(private http: HttpClient) { } }",Angular
+Create ASP.NET Core controller for Product,"[ApiController]
+[Route(""api/[controller]"")]
+public class ProductController : ControllerBase { }",.NET
+Create EF Core DbSet for Order,public DbSet<Order> Orders { get; set; },.NET
+Write SQL join query between Category and Orders,SELECT * FROM Category e JOIN Orders o ON e.Id = o.CategoryId;,SQL
+Create Angular form for Purchase,"this.form = this.fb.group({ name: ['', Validators.required] });",Angular
+Write SQL insert query for Order,INSERT INTO Order (Name) VALUES ('John');,SQL
+Write SQL join query between Order and Orders,SELECT * FROM Order e JOIN Orders o ON e.Id = o.OrderId;,SQL
+Write SQL insert query for Sales,INSERT INTO Sales (Name) VALUES ('John');,SQL
+Write SQL join query between Product and Orders,SELECT * FROM Product e JOIN Orders o ON e.Id = o.ProductId;,SQL
+Create EF Core DbSet for Customer,public DbSet<Customer> Customers { get; set; },.NET
+Create Angular component for Purchase,"@Component({ selector: 'app-purchase', templateUrl: './purchase.component.html' })
+export class PurchaseComponent { }",Angular
+Create Angular service for Stock,"@Injectable({ providedIn: 'root' })
+export class StockService { constructor(private http: HttpClient) { } }",Angular
+Create Angular component for Category,"@Component({ selector: 'app-category', templateUrl: './category.component.html' })
+export class CategoryComponent { }",Angular
+Create a C# class for Invoice,public class Invoice { public int Id { get; set; } public string Name { get; set; } },.NET
+Write SQL join query between Stock and Orders,SELECT * FROM Stock e JOIN Orders o ON e.Id = o.StockId;,SQL
+Write SQL join query between Sales and Orders,SELECT * FROM Sales e JOIN Orders o ON e.Id = o.SalesId;,SQL
+Create Angular service for Product,"@Injectable({ providedIn: 'root' })
+export class ProductService { constructor(private http: HttpClient) { } }",Angular
+Write SQL query to get all Invoice,SELECT * FROM Invoice;,SQL
+Write SQL insert query for Employee,INSERT INTO Employee (Name) VALUES ('John');,SQL
+Create Angular service for Order,"@Injectable({ providedIn: 'root' })
+export class OrderService { constructor(private http: HttpClient) { } }",Angular
+Create EF Core DbSet for Stock,public DbSet<Stock> Stocks { get; set; },.NET
+Create a C# class for Stock,public class Stock { public int Id { get; set; } public string Name { get; set; } },.NET
+Write SQL join query between Stock and Orders,SELECT * FROM Stock e JOIN Orders o ON e.Id = o.StockId;,SQL
+Create EF Core DbSet for Invoice,public DbSet<Invoice> Invoices { get; set; },.NET
+Create Angular component for Customer,"@Component({ selector: 'app-customer', templateUrl: './customer.component.html' })
+export class CustomerComponent { }",Angular
+Create Angular service for Order,"@Injectable({ providedIn: 'root' })
+export class OrderService { constructor(private http: HttpClient) { } }",Angular
+Write SQL insert query for Invoice,INSERT INTO Invoice (Name) VALUES ('John');,SQL
+Write SQL join query between Stock and Orders,SELECT * FROM Stock e JOIN Orders o ON e.Id = o.StockId;,SQL
+Write SQL insert query for Sales,INSERT INTO Sales (Name) VALUES ('John');,SQL
+Write SQL join query between Stock and Orders,SELECT * FROM Stock e JOIN Orders o ON e.Id = o.StockId;,SQL
+Create EF Core DbSet for Customer,public DbSet<Customer> Customers { get; set; },.NET
+Write SQL insert query for Employee,INSERT INTO Employee (Name) VALUES ('John');,SQL
+Create a C# class for Product,public class Product { public int Id { get; set; } public string Name { get; set; } },.NET
+Write SQL join query between Customer and Orders,SELECT * FROM Customer e JOIN Orders o ON e.Id = o.CustomerId;,SQL
+Create Angular form for Customer,"this.form = this.fb.group({ name: ['', Validators.required] });",Angular
+Write SQL insert query for Customer,INSERT INTO Customer (Name) VALUES ('John');,SQL
+Create ASP.NET Core controller for Purchase,"[ApiController]
+[Route(""api/[controller]"")]
+public class PurchaseController : ControllerBase { }",.NET
+Write SQL query to get all Stock,SELECT * FROM Stock;,SQL
+Write SQL join query between Invoice and Orders,SELECT * FROM Invoice e JOIN Orders o ON e.Id = o.InvoiceId;,SQL
+Create Angular service for Stock,"@Injectable({ providedIn: 'root' })
+export class StockService { constructor(private http: HttpClient) { } }",Angular
+Create Angular form for Employee,"this.form = this.fb.group({ name: ['', Validators.required] });",Angular
+Create Angular component for Stock,"@Component({ selector: 'app-stock', templateUrl: './stock.component.html' })
+export class StockComponent { }",Angular
+Create a C# class for Order,public class Order { public int Id { get; set; } public string Name { get; set; } },.NET
+Create a C# class for Purchase,public class Purchase { public int Id { get; set; } public string Name { get; set; } },.NET
+Create Angular component for Order,"@Component({ selector: 'app-order', templateUrl: './order.component.html' })
+export class OrderComponent { }",Angular
+Create Angular service for Category,"@Injectable({ providedIn: 'root' })
+export class CategoryService { constructor(private http: HttpClient) { } }",Angular
+Write SQL join query between Employee and Orders,SELECT * FROM Employee e JOIN Orders o ON e.Id = o.EmployeeId;,SQL
+Create a C# class for Purchase,public class Purchase { public int Id { get; set; } public string Name { get; set; } },.NET
+Create Angular service for Purchase,"@Injectable({ providedIn: 'root' })
+export class PurchaseService { constructor(private http: HttpClient) { } }",Angular
+Create EF Core DbSet for Sales,public DbSet<Sales> Saless { get; set; },.NET
+Create ASP.NET Core controller for Employee,"[ApiController]
+[Route(""api/[controller]"")]
+public class EmployeeController : ControllerBase { }",.NET
+Create ASP.NET Core controller for Employee,"[ApiController]
+[Route(""api/[controller]"")]
+public class EmployeeController : ControllerBase { }",.NET
+Create ASP.NET Core controller for Stock,"[ApiController]
+[Route(""api/[controller]"")]
+public class StockController : ControllerBase { }",.NET
+Create Angular form for Product,"this.form = this.fb.group({ name: ['', Validators.required] });",Angular
+Create Angular service for Purchase,"@Injectable({ providedIn: 'root' })
+export class PurchaseService { constructor(private http: HttpClient) { } }",Angular
+Write SQL join query between Sales and Orders,SELECT * FROM Sales e JOIN Orders o ON e.Id = o.SalesId;,SQL
+Create Angular service for Product,"@Injectable({ providedIn: 'root' })
+export class ProductService { constructor(private http: HttpClient) { } }",Angular
+Write SQL join query between Purchase and Orders,SELECT * FROM Purchase e JOIN Orders o ON e.Id = o.PurchaseId;,SQL
+Write SQL insert query for Invoice,INSERT INTO Invoice (Name) VALUES ('John');,SQL
+Create ASP.NET Core controller for Customer,"[ApiController]
+[Route(""api/[controller]"")]
+public class CustomerController : ControllerBase { }",.NET
+Write SQL insert query for Order,INSERT INTO Order (Name) VALUES ('John');,SQL
+Create EF Core DbSet for Customer,public DbSet<Customer> Customers { get; set; },.NET
+Create Angular service for Customer,"@Injectable({ providedIn: 'root' })
+export class CustomerService { constructor(private http: HttpClient) { } }",Angular
+Create Angular form for Invoice,"this.form = this.fb.group({ name: ['', Validators.required] });",Angular
+Write SQL insert query for Customer,INSERT INTO Customer (Name) VALUES ('John');,SQL
+Write SQL query to get all Customer,SELECT * FROM Customer;,SQL
+Create EF Core DbSet for Purchase,public DbSet<Purchase> Purchases { get; set; },.NET
+Write SQL join query between Purchase and Orders,SELECT * FROM Purchase e JOIN Orders o ON e.Id = o.PurchaseId;,SQL
+Create a C# class for Product,public class Product { public int Id { get; set; } public string Name { get; set; } },.NET
+Create Angular service for Order,"@Injectable({ providedIn: 'root' })
+export class OrderService { constructor(private http: HttpClient) { } }",Angular
+Create Angular service for Purchase,"@Injectable({ providedIn: 'root' })
+export class PurchaseService { constructor(private http: HttpClient) { } }",Angular
+Create Angular service for Sales,"@Injectable({ providedIn: 'root' })
+export class SalesService { constructor(private http: HttpClient) { } }",Angular
+Write SQL query to get all Purchase,SELECT * FROM Purchase;,SQL
+Create a C# class for Customer,public class Customer { public int Id { get; set; } public string Name { get; set; } },.NET
+Create a C# class for Purchase,public class Purchase { public int Id { get; set; } public string Name { get; set; } },.NET
+Write SQL query to get all Category,SELECT * FROM Category;,SQL
+Write SQL join query between Product and Orders,SELECT * FROM Product e JOIN Orders o ON e.Id = o.ProductId;,SQL
+Create EF Core DbSet for Stock,public DbSet<Stock> Stocks { get; set; },.NET
+Create ASP.NET Core controller for Sales,"[ApiController]
+[Route(""api/[controller]"")]
+public class SalesController : ControllerBase { }",.NET
+Create a C# class for Employee,public class Employee { public int Id { get; set; } public string Name { get; set; } },.NET
+Write SQL insert query for Purchase,INSERT INTO Purchase (Name) VALUES ('John');,SQL
+Create Angular component for Employee,"@Component({ selector: 'app-employee', templateUrl: './employee.component.html' })
+export class EmployeeComponent { }",Angular
+Create Angular component for Order,"@Component({ selector: 'app-order', templateUrl: './order.component.html' })
+export class OrderComponent { }",Angular
+Create a C# class for Employee,public class Employee { public int Id { get; set; } public string Name { get; set; } },.NET
+Create a C# class for Customer,public class Customer { public int Id { get; set; } public string Name { get; set; } },.NET
+Create Angular component for Invoice,"@Component({ selector: 'app-invoice', templateUrl: './invoice.component.html' })
+export class InvoiceComponent { }",Angular
+Create Angular service for Category,"@Injectable({ providedIn: 'root' })
+export class CategoryService { constructor(private http: HttpClient) { } }",Angular
+Create Angular form for Customer,"this.form = this.fb.group({ name: ['', Validators.required] });",Angular
+Create a C# class for Purchase,public class Purchase { public int Id { get; set; } public string Name { get; set; } },.NET
+Write SQL query to get all Purchase,SELECT * FROM Purchase;,SQL
+Write SQL join query between Invoice and Orders,SELECT * FROM Invoice e JOIN Orders o ON e.Id = o.InvoiceId;,SQL
+Create Angular component for Category,"@Component({ selector: 'app-category', templateUrl: './category.component.html' })
+export class CategoryComponent { }",Angular
+Write SQL insert query for Product,INSERT INTO Product (Name) VALUES ('John');,SQL
+Create ASP.NET Core controller for Customer,"[ApiController]
+[Route(""api/[controller]"")]
+public class CustomerController : ControllerBase { }",.NET
+Create EF Core DbSet for Product,public DbSet<Product> Products { get; set; },.NET
+Create Angular component for Category,"@Component({ selector: 'app-category', templateUrl: './category.component.html' })
+export class CategoryComponent { }",Angular
+Create Angular service for Order,"@Injectable({ providedIn: 'root' })
+export class OrderService { constructor(private http: HttpClient) { } }",Angular
+Write SQL insert query for Customer,INSERT INTO Customer (Name) VALUES ('John');,SQL
+Write SQL insert query for Purchase,INSERT INTO Purchase (Name) VALUES ('John');,SQL
+Create ASP.NET Core controller for Sales,"[ApiController]
+[Route(""api/[controller]"")]
+public class SalesController : ControllerBase { }",.NET
+Create a C# class for Sales,public class Sales { public int Id { get; set; } public string Name { get; set; } },.NET
+Create EF Core DbSet for Stock,public DbSet<Stock> Stocks { get; set; },.NET
+Create a C# class for Customer,public class Customer { public int Id { get; set; } public string Name { get; set; } },.NET
+Create Angular form for Sales,"this.form = this.fb.group({ name: ['', Validators.required] });",Angular
+Write SQL join query between Customer and Orders,SELECT * FROM Customer e JOIN Orders o ON e.Id = o.CustomerId;,SQL
+Create ASP.NET Core controller for Order,"[ApiController]
+[Route(""api/[controller]"")]
+public class OrderController : ControllerBase { }",.NET
+Write SQL join query between Category and Orders,SELECT * FROM Category e JOIN Orders o ON e.Id = o.CategoryId;,SQL
+Create Angular service for Purchase,"@Injectable({ providedIn: 'root' })
+export class PurchaseService { constructor(private http: HttpClient) { } }",Angular
+Create Angular component for Employee,"@Component({ selector: 'app-employee', templateUrl: './employee.component.html' })
+export class EmployeeComponent { }",Angular
+Create Angular form for Stock,"this.form = this.fb.group({ name: ['', Validators.required] });",Angular
+Create ASP.NET Core controller for Customer,"[ApiController]
+[Route(""api/[controller]"")]
+public class CustomerController : ControllerBase { }",.NET
+Create Angular service for Purchase,"@Injectable({ providedIn: 'root' })
+export class PurchaseService { constructor(private http: HttpClient) { } }",Angular
+Create EF Core DbSet for Order,public DbSet<Order> Orders { get; set; },.NET
+Create a C# class for Stock,public class Stock { public int Id { get; set; } public string Name { get; set; } },.NET
+Create a C# class for Invoice,public class Invoice { public int Id { get; set; } public string Name { get; set; } },.NET
+Write SQL query to get all Employee,SELECT * FROM Employee;,SQL
+Write SQL insert query for Product,INSERT INTO Product (Name) VALUES ('John');,SQL
+Create ASP.NET Core controller for Stock,"[ApiController]
+[Route(""api/[controller]"")]
+public class StockController : ControllerBase { }",.NET
+Write SQL insert query for Category,INSERT INTO Category (Name) VALUES ('John');,SQL
+Create Angular form for Employee,"this.form = this.fb.group({ name: ['', Validators.required] });",Angular
+Create EF Core DbSet for Order,public DbSet<Order> Orders { get; set; },.NET
+Write SQL insert query for Purchase,INSERT INTO Purchase (Name) VALUES ('John');,SQL
+Create Angular form for Sales,"this.form = this.fb.group({ name: ['', Validators.required] });",Angular
+Create Angular service for Order,"@Injectable({ providedIn: 'root' })
+export class OrderService { constructor(private http: HttpClient) { } }",Angular
+Create a C# class for Employee,public class Employee { public int Id { get; set; } public string Name { get; set; } },.NET
+Create a C# class for Invoice,public class Invoice { public int Id { get; set; } public string Name { get; set; } },.NET
+Write SQL query to get all Employee,SELECT * FROM Employee;,SQL
+Create Angular component for Sales,"@Component({ selector: 'app-sales', templateUrl: './sales.component.html' })
+export class SalesComponent { }",Angular
+Create EF Core DbSet for Customer,public DbSet<Customer> Customers { get; set; },.NET
+Create Angular component for Order,"@Component({ selector: 'app-order', templateUrl: './order.component.html' })
+export class OrderComponent { }",Angular
+Create ASP.NET Core controller for Invoice,"[ApiController]
+[Route(""api/[controller]"")]
+public class InvoiceController : ControllerBase { }",.NET
+Create EF Core DbSet for Category,public DbSet<Category> Categorys { get; set; },.NET
+Create EF Core DbSet for Invoice,public DbSet<Invoice> Invoices { get; set; },.NET
+Create EF Core DbSet for Sales,public DbSet<Sales> Saless { get; set; },.NET
+Create Angular form for Sales,"this.form = this.fb.group({ name: ['', Validators.required] });",Angular
+Create Angular form for Employee,"this.form = this.fb.group({ name: ['', Validators.required] });",Angular
+Create Angular component for Invoice,"@Component({ selector: 'app-invoice', templateUrl: './invoice.component.html' })
+export class InvoiceComponent { }",Angular
+Write SQL join query between Customer and Orders,SELECT * FROM Customer e JOIN Orders o ON e.Id = o.CustomerId;,SQL
+Write SQL insert query for Customer,INSERT INTO Customer (Name) VALUES ('John');,SQL
+Create EF Core DbSet for Category,public DbSet<Category> Categorys { get; set; },.NET
+Create Angular service for Product,"@Injectable({ providedIn: 'root' })
+export class ProductService { constructor(private http: HttpClient) { } }",Angular
+Create Angular service for Product,"@Injectable({ providedIn: 'root' })
+export class ProductService { constructor(private http: HttpClient) { } }",Angular
+Create Angular component for Sales,"@Component({ selector: 'app-sales', templateUrl: './sales.component.html' })
+export class SalesComponent { }",Angular
+Write SQL join query between Order and Orders,SELECT * FROM Order e JOIN Orders o ON e.Id = o.OrderId;,SQL
+Create Angular component for Stock,"@Component({ selector: 'app-stock', templateUrl: './stock.component.html' })
+export class StockComponent { }",Angular
+Create Angular form for Order,"this.form = this.fb.group({ name: ['', Validators.required] });",Angular
+Write SQL insert query for Category,INSERT INTO Category (Name) VALUES ('John');,SQL
+Create ASP.NET Core controller for Order,"[ApiController]
+[Route(""api/[controller]"")]
+public class OrderController : ControllerBase { }",.NET
+Create EF Core DbSet for Product,public DbSet<Product> Products { get; set; },.NET
+Create Angular component for Sales,"@Component({ selector: 'app-sales', templateUrl: './sales.component.html' })
+export class SalesComponent { }",Angular
+Create Angular form for Order,"this.form = this.fb.group({ name: ['', Validators.required] });",Angular
+Create Angular component for Order,"@Component({ selector: 'app-order', templateUrl: './order.component.html' })
+export class OrderComponent { }",Angular
+Write SQL insert query for Order,INSERT INTO Order (Name) VALUES ('John');,SQL
+Create a C# class for Stock,public class Stock { public int Id { get; set; } public string Name { get; set; } },.NET
+Write SQL insert query for Product,INSERT INTO Product (Name) VALUES ('John');,SQL
+Create ASP.NET Core controller for Order,"[ApiController]
+[Route(""api/[controller]"")]
+public class OrderController : ControllerBase { }",.NET
+Write SQL insert query for Customer,INSERT INTO Customer (Name) VALUES ('John');,SQL
+Write SQL query to get all Employee,SELECT * FROM Employee;,SQL
+Create Angular form for Order,"this.form = this.fb.group({ name: ['', Validators.required] });",Angular
+Create EF Core DbSet for Product,public DbSet<Product> Products { get; set; },.NET
+Write SQL join query between Order and Orders,SELECT * FROM Order e JOIN Orders o ON e.Id = o.OrderId;,SQL
+Create EF Core DbSet for Category,public DbSet<Category> Categorys { get; set; },.NET
+Write SQL insert query for Employee,INSERT INTO Employee (Name) VALUES ('John');,SQL
+Create Angular form for Stock,"this.form = this.fb.group({ name: ['', Validators.required] });",Angular
+Create Angular service for Product,"@Injectable({ providedIn: 'root' })
+export class ProductService { constructor(private http: HttpClient) { } }",Angular
+Write SQL query to get all Stock,SELECT * FROM Stock;,SQL
+Write SQL query to get all Sales,SELECT * FROM Sales;,SQL
+Create Angular form for Invoice,"this.form = this.fb.group({ name: ['', Validators.required] });",Angular
+Create a C# class for Stock,public class Stock { public int Id { get; set; } public string Name { get; set; } },.NET
+Create EF Core DbSet for Category,public DbSet<Category> Categorys { get; set; },.NET
+Write SQL join query between Customer and Orders,SELECT * FROM Customer e JOIN Orders o ON e.Id = o.CustomerId;,SQL
+Create ASP.NET Core controller for Employee,"[ApiController]
+[Route(""api/[controller]"")]
+public class EmployeeController : ControllerBase { }",.NET
+Create Angular component for Customer,"@Component({ selector: 'app-customer', templateUrl: './customer.component.html' })
+export class CustomerComponent { }",Angular
+Create Angular service for Customer,"@Injectable({ providedIn: 'root' })
+export class CustomerService { constructor(private http: HttpClient) { } }",Angular
+Create a C# class for Employee,public class Employee { public int Id { get; set; } public string Name { get; set; } },.NET
+Create a C# class for Order,public class Order { public int Id { get; set; } public string Name { get; set; } },.NET
+Create Angular component for Stock,"@Component({ selector: 'app-stock', templateUrl: './stock.component.html' })
+export class StockComponent { }",Angular
+Create Angular form for Product,"this.form = this.fb.group({ name: ['', Validators.required] });",Angular
+Write SQL query to get all Sales,SELECT * FROM Sales;,SQL
+Create EF Core DbSet for Purchase,public DbSet<Purchase> Purchases { get; set; },.NET
+Create a C# class for Product,public class Product { public int Id { get; set; } public string Name { get; set; } },.NET
+Create Angular form for Invoice,"this.form = this.fb.group({ name: ['', Validators.required] });",Angular
+Create a C# class for Sales,public class Sales { public int Id { get; set; } public string Name { get; set; } },.NET
+Create ASP.NET Core controller for Employee,"[ApiController]
+[Route(""api/[controller]"")]
+public class EmployeeController : ControllerBase { }",.NET
+Create Angular component for Sales,"@Component({ selector: 'app-sales', templateUrl: './sales.component.html' })
+export class SalesComponent { }",Angular
+Create Angular form for Product,"this.form = this.fb.group({ name: ['', Validators.required] });",Angular
+Write SQL insert query for Employee,INSERT INTO Employee (Name) VALUES ('John');,SQL
+Create a C# class for Invoice,public class Invoice { public int Id { get; set; } public string Name { get; set; } },.NET
+Write SQL join query between Employee and Orders,SELECT * FROM Employee e JOIN Orders o ON e.Id = o.EmployeeId;,SQL
+Create ASP.NET Core controller for Sales,"[ApiController]
+[Route(""api/[controller]"")]
+public class SalesController : ControllerBase { }",.NET
+Create ASP.NET Core controller for Order,"[ApiController]
+[Route(""api/[controller]"")]
+public class OrderController : ControllerBase { }",.NET
+Create a C# class for Purchase,public class Purchase { public int Id { get; set; } public string Name { get; set; } },.NET
+Create EF Core DbSet for Stock,public DbSet<Stock> Stocks { get; set; },.NET
+Create Angular component for Invoice,"@Component({ selector: 'app-invoice', templateUrl: './invoice.component.html' })
+export class InvoiceComponent { }",Angular
+Create Angular form for Category,"this.form = this.fb.group({ name: ['', Validators.required] });",Angular
+Create Angular component for Category,"@Component({ selector: 'app-category', templateUrl: './category.component.html' })
+export class CategoryComponent { }",Angular
+Create EF Core DbSet for Employee,public DbSet<Employee> Employees { get; set; },.NET
+Create Angular form for Stock,"this.form = this.fb.group({ name: ['', Validators.required] });",Angular
+Create a C# class for Employee,public class Employee { public int Id { get; set; } public string Name { get; set; } },.NET
+Create Angular service for Employee,"@Injectable({ providedIn: 'root' })
+export class EmployeeService { constructor(private http: HttpClient) { } }",Angular
+Write SQL join query between Stock and Orders,SELECT * FROM Stock e JOIN Orders o ON e.Id = o.StockId;,SQL
+Write SQL insert query for Order,INSERT INTO Order (Name) VALUES ('John');,SQL
+Create a C# class for Purchase,public class Purchase { public int Id { get; set; } public string Name { get; set; } },.NET
+Create EF Core DbSet for Purchase,public DbSet<Purchase> Purchases { get; set; },.NET
+Create Angular component for Product,"@Component({ selector: 'app-product', templateUrl: './product.component.html' })
+export class ProductComponent { }",Angular
+Create EF Core DbSet for Sales,public DbSet<Sales> Saless { get; set; },.NET
+Create ASP.NET Core controller for Order,"[ApiController]
+[Route(""api/[controller]"")]
+public class OrderController : ControllerBase { }",.NET
+Create EF Core DbSet for Order,public DbSet<Order> Orders { get; set; },.NET
+Create ASP.NET Core controller for Order,"[ApiController]
+[Route(""api/[controller]"")]
+public class OrderController : ControllerBase { }",.NET
+Create a C# class for Purchase,public class Purchase { public int Id { get; set; } public string Name { get; set; } },.NET
+Create EF Core DbSet for Customer,public DbSet<Customer> Customers { get; set; },.NET
+Write SQL query to get all Sales,SELECT * FROM Sales;,SQL
+Create Angular component for Customer,"@Component({ selector: 'app-customer', templateUrl: './customer.component.html' })
+export class CustomerComponent { }",Angular
+Create Angular form for Category,"this.form = this.fb.group({ name: ['', Validators.required] });",Angular
+Create a C# class for Category,public class Category { public int Id { get; set; } public string Name { get; set; } },.NET
+Create EF Core DbSet for Category,public DbSet<Category> Categorys { get; set; },.NET
+Write SQL query to get all Purchase,SELECT * FROM Purchase;,SQL
+Create Angular form for Customer,"this.form = this.fb.group({ name: ['', Validators.required] });",Angular
+Create a C# class for Product,public class Product { public int Id { get; set; } public string Name { get; set; } },.NET
+Create Angular component for Customer,"@Component({ selector: 'app-customer', templateUrl: './customer.component.html' })
+export class CustomerComponent { }",Angular
+Create Angular form for Invoice,"this.form = this.fb.group({ name: ['', Validators.required] });",Angular
+Create ASP.NET Core controller for Stock,"[ApiController]
+[Route(""api/[controller]"")]
+public class StockController : ControllerBase { }",.NET
+Create EF Core DbSet for Customer,public DbSet<Customer> Customers { get; set; },.NET
+Create Angular service for Order,"@Injectable({ providedIn: 'root' })
+export class OrderService { constructor(private http: HttpClient) { } }",Angular
+Create a C# class for Customer,public class Customer { public int Id { get; set; } public string Name { get; set; } },.NET
+Create EF Core DbSet for Stock,public DbSet<Stock> Stocks { get; set; },.NET
+Create Angular service for Stock,"@Injectable({ providedIn: 'root' })
+export class StockService { constructor(private http: HttpClient) { } }",Angular
+Create ASP.NET Core controller for Purchase,"[ApiController]
+[Route(""api/[controller]"")]
+public class PurchaseController : ControllerBase { }",.NET
+Write SQL query to get all Employee,SELECT * FROM Employee;,SQL
+Create EF Core DbSet for Purchase,public DbSet<Purchase> Purchases { get; set; },.NET
+Write SQL join query between Employee and Orders,SELECT * FROM Employee e JOIN Orders o ON e.Id = o.EmployeeId;,SQL
+Create Angular service for Employee,"@Injectable({ providedIn: 'root' })
+export class EmployeeService { constructor(private http: HttpClient) { } }",Angular
+Create Angular form for Customer,"this.form = this.fb.group({ name: ['', Validators.required] });",Angular
+Create a C# class for Purchase,public class Purchase { public int Id { get; set; } public string Name { get; set; } },.NET
+Create Angular service for Order,"@Injectable({ providedIn: 'root' })
+export class OrderService { constructor(private http: HttpClient) { } }",Angular
+Create Angular component for Product,"@Component({ selector: 'app-product', templateUrl: './product.component.html' })
+export class ProductComponent { }",Angular
+Create Angular form for Order,"this.form = this.fb.group({ name: ['', Validators.required] });",Angular
+Write SQL insert query for Employee,INSERT INTO Employee (Name) VALUES ('John');,SQL
+Write SQL join query between Employee and Orders,SELECT * FROM Employee e JOIN Orders o ON e.Id = o.EmployeeId;,SQL
+Write SQL insert query for Sales,INSERT INTO Sales (Name) VALUES ('John');,SQL
+Create Angular form for Invoice,"this.form = this.fb.group({ name: ['', Validators.required] });",Angular
+Write SQL insert query for Category,INSERT INTO Category (Name) VALUES ('John');,SQL
+Create ASP.NET Core controller for Product,"[ApiController]
+[Route(""api/[controller]"")]
+public class ProductController : ControllerBase { }",.NET
+Create ASP.NET Core controller for Order,"[ApiController]
+[Route(""api/[controller]"")]
+public class OrderController : ControllerBase { }",.NET
+Write SQL insert query for Stock,INSERT INTO Stock (Name) VALUES ('John');,SQL
+Create Angular form for Category,"this.form = this.fb.group({ name: ['', Validators.required] });",Angular
+Write SQL join query between Invoice and Orders,SELECT * FROM Invoice e JOIN Orders o ON e.Id = o.InvoiceId;,SQL
+Write SQL join query between Invoice and Orders,SELECT * FROM Invoice e JOIN Orders o ON e.Id = o.InvoiceId;,SQL
+Create a C# class for Purchase,public class Purchase { public int Id { get; set; } public string Name { get; set; } },.NET
+Write SQL insert query for Category,INSERT INTO Category (Name) VALUES ('John');,SQL
+Create Angular component for Sales,"@Component({ selector: 'app-sales', templateUrl: './sales.component.html' })
+export class SalesComponent { }",Angular
+Create ASP.NET Core controller for Order,"[ApiController]
+[Route(""api/[controller]"")]
+public class OrderController : ControllerBase { }",.NET
+Create EF Core DbSet for Customer,public DbSet<Customer> Customers { get; set; },.NET
+Create Angular component for Stock,"@Component({ selector: 'app-stock', templateUrl: './stock.component.html' })
+export class StockComponent { }",Angular
+Create EF Core DbSet for Product,public DbSet<Product> Products { get; set; },.NET
+Create Angular component for Employee,"@Component({ selector: 'app-employee', templateUrl: './employee.component.html' })
+export class EmployeeComponent { }",Angular
+Write SQL insert query for Purchase,INSERT INTO Purchase (Name) VALUES ('John');,SQL
+Create a C# class for Invoice,public class Invoice { public int Id { get; set; } public string Name { get; set; } },.NET
+Write SQL query to get all Sales,SELECT * FROM Sales;,SQL
+Create ASP.NET Core controller for Stock,"[ApiController]
+[Route(""api/[controller]"")]
+public class StockController : ControllerBase { }",.NET
+Create Angular form for Stock,"this.form = this.fb.group({ name: ['', Validators.required] });",Angular
+Create ASP.NET Core controller for Employee,"[ApiController]
+[Route(""api/[controller]"")]
+public class EmployeeController : ControllerBase { }",.NET
+Create Angular service for Category,"@Injectable({ providedIn: 'root' })
+export class CategoryService { constructor(private http: HttpClient) { } }",Angular
+Create Angular service for Purchase,"@Injectable({ providedIn: 'root' })
+export class PurchaseService { constructor(private http: HttpClient) { } }",Angular
+Write SQL join query between Order and Orders,SELECT * FROM Order e JOIN Orders o ON e.Id = o.OrderId;,SQL
+Create Angular component for Employee,"@Component({ selector: 'app-employee', templateUrl: './employee.component.html' })
+export class EmployeeComponent { }",Angular
+Write SQL query to get all Invoice,SELECT * FROM Invoice;,SQL
+Create ASP.NET Core controller for Employee,"[ApiController]
+[Route(""api/[controller]"")]
+public class EmployeeController : ControllerBase { }",.NET
+Write SQL query to get all Sales,SELECT * FROM Sales;,SQL
+Create Angular service for Customer,"@Injectable({ providedIn: 'root' })
+export class CustomerService { constructor(private http: HttpClient) { } }",Angular
+Create EF Core DbSet for Invoice,public DbSet<Invoice> Invoices { get; set; },.NET
+Create Angular service for Sales,"@Injectable({ providedIn: 'root' })
+export class SalesService { constructor(private http: HttpClient) { } }",Angular
+Create ASP.NET Core controller for Order,"[ApiController]
+[Route(""api/[controller]"")]
+public class OrderController : ControllerBase { }",.NET
+Write SQL insert query for Employee,INSERT INTO Employee (Name) VALUES ('John');,SQL
+Write SQL insert query for Sales,INSERT INTO Sales (Name) VALUES ('John');,SQL
+Create a C# class for Order,public class Order { public int Id { get; set; } public string Name { get; set; } },.NET
+Create EF Core DbSet for Order,public DbSet<Order> Orders { get; set; },.NET
+Create ASP.NET Core controller for Purchase,"[ApiController]
+[Route(""api/[controller]"")]
+public class PurchaseController : ControllerBase { }",.NET
+Create Angular component for Stock,"@Component({ selector: 'app-stock', templateUrl: './stock.component.html' })
+export class StockComponent { }",Angular
+Create EF Core DbSet for Order,public DbSet<Order> Orders { get; set; },.NET
+Create a C# class for Customer,public class Customer { public int Id { get; set; } public string Name { get; set; } },.NET
+Write SQL insert query for Employee,INSERT INTO Employee (Name) VALUES ('John');,SQL
+Create EF Core DbSet for Category,public DbSet<Category> Categorys { get; set; },.NET
+Create a C# class for Invoice,public class Invoice { public int Id { get; set; } public string Name { get; set; } },.NET
+Create a C# class for Product,public class Product { public int Id { get; set; } public string Name { get; set; } },.NET
+Create a C# class for Invoice,public class Invoice { public int Id { get; set; } public string Name { get; set; } },.NET
+Create Angular service for Sales,"@Injectable({ providedIn: 'root' })
+export class SalesService { constructor(private http: HttpClient) { } }",Angular
+Create EF Core DbSet for Order,public DbSet<Order> Orders { get; set; },.NET
+Write SQL join query between Stock and Orders,SELECT * FROM Stock e JOIN Orders o ON e.Id = o.StockId;,SQL
+Write SQL query to get all Invoice,SELECT * FROM Invoice;,SQL
+Create Angular service for Customer,"@Injectable({ providedIn: 'root' })
+export class CustomerService { constructor(private http: HttpClient) { } }",Angular
+Create ASP.NET Core controller for Order,"[ApiController]
+[Route(""api/[controller]"")]
+public class OrderController : ControllerBase { }",.NET
+Create Angular form for Order,"this.form = this.fb.group({ name: ['', Validators.required] });",Angular
+Create a C# class for Invoice,public class Invoice { public int Id { get; set; } public string Name { get; set; } },.NET
+Create Angular form for Order,"this.form = this.fb.group({ name: ['', Validators.required] });",Angular
+Create a C# class for Purchase,public class Purchase { public int Id { get; set; } public string Name { get; set; } },.NET
+Create Angular component for Product,"@Component({ selector: 'app-product', templateUrl: './product.component.html' })
+export class ProductComponent { }",Angular
+Write SQL insert query for Employee,INSERT INTO Employee (Name) VALUES ('John');,SQL
+Write SQL insert query for Order,INSERT INTO Order (Name) VALUES ('John');,SQL
+Write SQL join query between Employee and Orders,SELECT * FROM Employee e JOIN Orders o ON e.Id = o.EmployeeId;,SQL
+Create Angular service for Sales,"@Injectable({ providedIn: 'root' })
+export class SalesService { constructor(private http: HttpClient) { } }",Angular
+Write SQL insert query for Purchase,INSERT INTO Purchase (Name) VALUES ('John');,SQL
+Create Angular component for Stock,"@Component({ selector: 'app-stock', templateUrl: './stock.component.html' })
+export class StockComponent { }",Angular
+Create Angular component for Purchase,"@Component({ selector: 'app-purchase', templateUrl: './purchase.component.html' })
+export class PurchaseComponent { }",Angular
+Write SQL insert query for Employee,INSERT INTO Employee (Name) VALUES ('John');,SQL
+Create EF Core DbSet for Sales,public DbSet<Sales> Saless { get; set; },.NET
+Create ASP.NET Core controller for Customer,"[ApiController]
+[Route(""api/[controller]"")]
+public class CustomerController : ControllerBase { }",.NET
+Create a C# class for Sales,public class Sales { public int Id { get; set; } public string Name { get; set; } },.NET
+Create Angular service for Customer,"@Injectable({ providedIn: 'root' })
+export class CustomerService { constructor(private http: HttpClient) { } }",Angular
+Create Angular form for Invoice,"this.form = this.fb.group({ name: ['', Validators.required] });",Angular
+Create a C# class for Invoice,public class Invoice { public int Id { get; set; } public string Name { get; set; } },.NET
+Write SQL join query between Category and Orders,SELECT * FROM Category e JOIN Orders o ON e.Id = o.CategoryId;,SQL
+Write SQL join query between Order and Orders,SELECT * FROM Order e JOIN Orders o ON e.Id = o.OrderId;,SQL
+Create Angular component for Category,"@Component({ selector: 'app-category', templateUrl: './category.component.html' })
+export class CategoryComponent { }",Angular
+Create Angular form for Employee,"this.form = this.fb.group({ name: ['', Validators.required] });",Angular
+Create Angular form for Product,"this.form = this.fb.group({ name: ['', Validators.required] });",Angular
+Create a C# class for Invoice,public class Invoice { public int Id { get; set; } public string Name { get; set; } },.NET
+Create Angular service for Sales,"@Injectable({ providedIn: 'root' })
+export class SalesService { constructor(private http: HttpClient) { } }",Angular
+Create Angular form for Sales,"this.form = this.fb.group({ name: ['', Validators.required] });",Angular
+Create ASP.NET Core controller for Customer,"[ApiController]
+[Route(""api/[controller]"")]
+public class CustomerController : ControllerBase { }",.NET
+Create ASP.NET Core controller for Sales,"[ApiController]
+[Route(""api/[controller]"")]
+public class SalesController : ControllerBase { }",.NET
+Write SQL join query between Stock and Orders,SELECT * FROM Stock e JOIN Orders o ON e.Id = o.StockId;,SQL
+Create Angular form for Category,"this.form = this.fb.group({ name: ['', Validators.required] });",Angular
+Write SQL insert query for Order,INSERT INTO Order (Name) VALUES ('John');,SQL
+Create Angular service for Customer,"@Injectable({ providedIn: 'root' })
+export class CustomerService { constructor(private http: HttpClient) { } }",Angular
+Write SQL join query between Order and Orders,SELECT * FROM Order e JOIN Orders o ON e.Id = o.OrderId;,SQL
+Create Angular component for Product,"@Component({ selector: 'app-product', templateUrl: './product.component.html' })
+export class ProductComponent { }",Angular
+Create Angular component for Employee,"@Component({ selector: 'app-employee', templateUrl: './employee.component.html' })
+export class EmployeeComponent { }",Angular
+Write SQL insert query for Purchase,INSERT INTO Purchase (Name) VALUES ('John');,SQL
+Write SQL insert query for Sales,INSERT INTO Sales (Name) VALUES ('John');,SQL
+Write SQL insert query for Order,INSERT INTO Order (Name) VALUES ('John');,SQL
+Write SQL join query between Category and Orders,SELECT * FROM Category e JOIN Orders o ON e.Id = o.CategoryId;,SQL
+Write SQL insert query for Stock,INSERT INTO Stock (Name) VALUES ('John');,SQL
+Create EF Core DbSet for Employee,public DbSet<Employee> Employees { get; set; },.NET
+Create Angular form for Order,"this.form = this.fb.group({ name: ['', Validators.required] });",Angular
+Write SQL query to get all Order,SELECT * FROM Order;,SQL
+Create EF Core DbSet for Sales,public DbSet<Sales> Saless { get; set; },.NET
+Create Angular component for Order,"@Component({ selector: 'app-order', templateUrl: './order.component.html' })
+export class OrderComponent { }",Angular
+Write SQL join query between Category and Orders,SELECT * FROM Category e JOIN Orders o ON e.Id = o.CategoryId;,SQL
+Write SQL query to get all Purchase,SELECT * FROM Purchase;,SQL
+Write SQL query to get all Employee,SELECT * FROM Employee;,SQL
+Create Angular service for Employee,"@Injectable({ providedIn: 'root' })
+export class EmployeeService { constructor(private http: HttpClient) { } }",Angular
+Create a C# class for Order,public class Order { public int Id { get; set; } public string Name { get; set; } },.NET
+Write SQL join query between Stock and Orders,SELECT * FROM Stock e JOIN Orders o ON e.Id = o.StockId;,SQL
+Write SQL query to get all Customer,SELECT * FROM Customer;,SQL
+Write SQL insert query for Invoice,INSERT INTO Invoice (Name) VALUES ('John');,SQL
+Write SQL join query between Purchase and Orders,SELECT * FROM Purchase e JOIN Orders o ON e.Id = o.PurchaseId;,SQL
+Create ASP.NET Core controller for Purchase,"[ApiController]
+[Route(""api/[controller]"")]
+public class PurchaseController : ControllerBase { }",.NET
+Create a C# class for Product,public class Product { public int Id { get; set; } public string Name { get; set; } },.NET
+Create EF Core DbSet for Employee,public DbSet<Employee> Employees { get; set; },.NET
+Create EF Core DbSet for Customer,public DbSet<Customer> Customers { get; set; },.NET
+Create EF Core DbSet for Invoice,public DbSet<Invoice> Invoices { get; set; },.NET
+Create Angular component for Product,"@Component({ selector: 'app-product', templateUrl: './product.component.html' })
+export class ProductComponent { }",Angular
+Create EF Core DbSet for Order,public DbSet<Order> Orders { get; set; },.NET
+Create EF Core DbSet for Purchase,public DbSet<Purchase> Purchases { get; set; },.NET
+Write SQL insert query for Stock,INSERT INTO Stock (Name) VALUES ('John');,SQL
+Create Angular service for Invoice,"@Injectable({ providedIn: 'root' })
+export class InvoiceService { constructor(private http: HttpClient) { } }",Angular
+Write SQL join query between Category and Orders,SELECT * FROM Category e JOIN Orders o ON e.Id = o.CategoryId;,SQL
+Create ASP.NET Core controller for Category,"[ApiController]
+[Route(""api/[controller]"")]
+public class CategoryController : ControllerBase { }",.NET
+Write SQL insert query for Sales,INSERT INTO Sales (Name) VALUES ('John');,SQL
+Create Angular component for Stock,"@Component({ selector: 'app-stock', templateUrl: './stock.component.html' })
+export class StockComponent { }",Angular
+Create Angular service for Order,"@Injectable({ providedIn: 'root' })
+export class OrderService { constructor(private http: HttpClient) { } }",Angular
+Write SQL query to get all Stock,SELECT * FROM Stock;,SQL
+Create Angular form for Stock,"this.form = this.fb.group({ name: ['', Validators.required] });",Angular
+Create Angular component for Employee,"@Component({ selector: 'app-employee', templateUrl: './employee.component.html' })
+export class EmployeeComponent { }",Angular
+Write SQL join query between Product and Orders,SELECT * FROM Product e JOIN Orders o ON e.Id = o.ProductId;,SQL
+Create a C# class for Stock,public class Stock { public int Id { get; set; } public string Name { get; set; } },.NET
+Create EF Core DbSet for Customer,public DbSet<Customer> Customers { get; set; },.NET
+Write SQL insert query for Employee,INSERT INTO Employee (Name) VALUES ('John');,SQL
+Create ASP.NET Core controller for Employee,"[ApiController]
+[Route(""api/[controller]"")]
+public class EmployeeController : ControllerBase { }",.NET
+Create Angular form for Invoice,"this.form = this.fb.group({ name: ['', Validators.required] });",Angular
+Create Angular service for Purchase,"@Injectable({ providedIn: 'root' })
+export class PurchaseService { constructor(private http: HttpClient) { } }",Angular
+Create Angular form for Customer,"this.form = this.fb.group({ name: ['', Validators.required] });",Angular
+Create Angular form for Employee,"this.form = this.fb.group({ name: ['', Validators.required] });",Angular
+Write SQL query to get all Employee,SELECT * FROM Employee;,SQL
+Write SQL insert query for Customer,INSERT INTO Customer (Name) VALUES ('John');,SQL
+Create Angular service for Employee,"@Injectable({ providedIn: 'root' })
+export class EmployeeService { constructor(private http: HttpClient) { } }",Angular
+Create ASP.NET Core controller for Order,"[ApiController]
+[Route(""api/[controller]"")]
+public class OrderController : ControllerBase { }",.NET
+Create a C# class for Category,public class Category { public int Id { get; set; } public string Name { get; set; } },.NET
+Write SQL join query between Invoice and Orders,SELECT * FROM Invoice e JOIN Orders o ON e.Id = o.InvoiceId;,SQL
+Create Angular form for Invoice,"this.form = this.fb.group({ name: ['', Validators.required] });",Angular
+Create Angular form for Category,"this.form = this.fb.group({ name: ['', Validators.required] });",Angular
+Write SQL join query between Sales and Orders,SELECT * FROM Sales e JOIN Orders o ON e.Id = o.SalesId;,SQL
+Create ASP.NET Core controller for Order,"[ApiController]
+[Route(""api/[controller]"")]
+public class OrderController : ControllerBase { }",.NET
+Write SQL join query between Sales and Orders,SELECT * FROM Sales e JOIN Orders o ON e.Id = o.SalesId;,SQL
+Create Angular service for Invoice,"@Injectable({ providedIn: 'root' })
+export class InvoiceService { constructor(private http: HttpClient) { } }",Angular
+Create Angular form for Product,"this.form = this.fb.group({ name: ['', Validators.required] });",Angular
+Create Angular component for Sales,"@Component({ selector: 'app-sales', templateUrl: './sales.component.html' })
+export class SalesComponent { }",Angular
+Create Angular service for Product,"@Injectable({ providedIn: 'root' })
+export class ProductService { constructor(private http: HttpClient) { } }",Angular
+Create Angular component for Product,"@Component({ selector: 'app-product', templateUrl: './product.component.html' })
+export class ProductComponent { }",Angular
+Create Angular service for Customer,"@Injectable({ providedIn: 'root' })
+export class CustomerService { constructor(private http: HttpClient) { } }",Angular
+Write SQL join query between Order and Orders,SELECT * FROM Order e JOIN Orders o ON e.Id = o.OrderId;,SQL
+Write SQL insert query for Order,INSERT INTO Order (Name) VALUES ('John');,SQL
+Write SQL insert query for Sales,INSERT INTO Sales (Name) VALUES ('John');,SQL
+Create ASP.NET Core controller for Purchase,"[ApiController]
+[Route(""api/[controller]"")]
+public class PurchaseController : ControllerBase { }",.NET
+Write SQL insert query for Invoice,INSERT INTO Invoice (Name) VALUES ('John');,SQL
+Write SQL join query between Product and Orders,SELECT * FROM Product e JOIN Orders o ON e.Id = o.ProductId;,SQL
+Create Angular component for Order,"@Component({ selector: 'app-order', templateUrl: './order.component.html' })
+export class OrderComponent { }",Angular
+Create Angular component for Product,"@Component({ selector: 'app-product', templateUrl: './product.component.html' })
+export class ProductComponent { }",Angular
+Create a C# class for Category,public class Category { public int Id { get; set; } public string Name { get; set; } },.NET
+Create ASP.NET Core controller for Sales,"[ApiController]
+[Route(""api/[controller]"")]
+public class SalesController : ControllerBase { }",.NET
+Create a C# class for Order,public class Order { public int Id { get; set; } public string Name { get; set; } },.NET
+Create a C# class for Employee,public class Employee { public int Id { get; set; } public string Name { get; set; } },.NET
+Create Angular service for Category,"@Injectable({ providedIn: 'root' })
+export class CategoryService { constructor(private http: HttpClient) { } }",Angular
+Create ASP.NET Core controller for Employee,"[ApiController]
+[Route(""api/[controller]"")]
+public class EmployeeController : ControllerBase { }",.NET
+Create Angular component for Employee,"@Component({ selector: 'app-employee', templateUrl: './employee.component.html' })
+export class EmployeeComponent { }",Angular
+Create Angular service for Sales,"@Injectable({ providedIn: 'root' })
+export class SalesService { constructor(private http: HttpClient) { } }",Angular
+Create Angular form for Purchase,"this.form = this.fb.group({ name: ['', Validators.required] });",Angular
+Create Angular component for Order,"@Component({ selector: 'app-order', templateUrl: './order.component.html' })
+export class OrderComponent { }",Angular
+Create ASP.NET Core controller for Order,"[ApiController]
+[Route(""api/[controller]"")]
+public class OrderController : ControllerBase { }",.NET
+Write SQL insert query for Stock,INSERT INTO Stock (Name) VALUES ('John');,SQL
+Create Angular component for Stock,"@Component({ selector: 'app-stock', templateUrl: './stock.component.html' })
+export class StockComponent { }",Angular
+Create a C# class for Stock,public class Stock { public int Id { get; set; } public string Name { get; set; } },.NET
+Write SQL insert query for Product,INSERT INTO Product (Name) VALUES ('John');,SQL
+Create ASP.NET Core controller for Sales,"[ApiController]
+[Route(""api/[controller]"")]
+public class SalesController : ControllerBase { }",.NET
+Create Angular service for Sales,"@Injectable({ providedIn: 'root' })
+export class SalesService { constructor(private http: HttpClient) { } }",Angular
+Create ASP.NET Core controller for Purchase,"[ApiController]
+[Route(""api/[controller]"")]
+public class PurchaseController : ControllerBase { }",.NET
+Write SQL query to get all Sales,SELECT * FROM Sales;,SQL
+Create Angular form for Product,"this.form = this.fb.group({ name: ['', Validators.required] });",Angular
+Create ASP.NET Core controller for Sales,"[ApiController]
+[Route(""api/[controller]"")]
+public class SalesController : ControllerBase { }",.NET
+Create Angular service for Invoice,"@Injectable({ providedIn: 'root' })
+export class InvoiceService { constructor(private http: HttpClient) { } }",Angular
+Write SQL join query between Order and Orders,SELECT * FROM Order e JOIN Orders o ON e.Id = o.OrderId;,SQL
+Write SQL query to get all Employee,SELECT * FROM Employee;,SQL
+Create Angular component for Sales,"@Component({ selector: 'app-sales', templateUrl: './sales.component.html' })
+export class SalesComponent { }",Angular
+Create EF Core DbSet for Category,public DbSet<Category> Categorys { get; set; },.NET
+Create Angular service for Sales,"@Injectable({ providedIn: 'root' })
+export class SalesService { constructor(private http: HttpClient) { } }",Angular
+Write SQL query to get all Invoice,SELECT * FROM Invoice;,SQL
+Create EF Core DbSet for Invoice,public DbSet<Invoice> Invoices { get; set; },.NET
+Create Angular service for Purchase,"@Injectable({ providedIn: 'root' })
+export class PurchaseService { constructor(private http: HttpClient) { } }",Angular
+Write SQL query to get all Sales,SELECT * FROM Sales;,SQL
+Create Angular service for Employee,"@Injectable({ providedIn: 'root' })
+export class EmployeeService { constructor(private http: HttpClient) { } }",Angular
+Create a C# class for Sales,public class Sales { public int Id { get; set; } public string Name { get; set; } },.NET
+Create Angular form for Sales,"this.form = this.fb.group({ name: ['', Validators.required] });",Angular
+Create ASP.NET Core controller for Employee,"[ApiController]
+[Route(""api/[controller]"")]
+public class EmployeeController : ControllerBase { }",.NET
+Write SQL insert query for Invoice,INSERT INTO Invoice (Name) VALUES ('John');,SQL
+Write SQL query to get all Stock,SELECT * FROM Stock;,SQL
+Create Angular form for Purchase,"this.form = this.fb.group({ name: ['', Validators.required] });",Angular
+Create ASP.NET Core controller for Product,"[ApiController]
+[Route(""api/[controller]"")]
+public class ProductController : ControllerBase { }",.NET
+Create ASP.NET Core controller for Category,"[ApiController]
+[Route(""api/[controller]"")]
+public class CategoryController : ControllerBase { }",.NET
+Create ASP.NET Core controller for Customer,"[ApiController]
+[Route(""api/[controller]"")]
+public class CustomerController : ControllerBase { }",.NET
+Write SQL query to get all Customer,SELECT * FROM Customer;,SQL
+Create ASP.NET Core controller for Customer,"[ApiController]
+[Route(""api/[controller]"")]
+public class CustomerController : ControllerBase { }",.NET
+Create ASP.NET Core controller for Sales,"[ApiController]
+[Route(""api/[controller]"")]
+public class SalesController : ControllerBase { }",.NET
+Create Angular component for Invoice,"@Component({ selector: 'app-invoice', templateUrl: './invoice.component.html' })
+export class InvoiceComponent { }",Angular
+Create Angular component for Invoice,"@Component({ selector: 'app-invoice', templateUrl: './invoice.component.html' })
+export class InvoiceComponent { }",Angular
+Create EF Core DbSet for Purchase,public DbSet<Purchase> Purchases { get; set; },.NET
+Create Angular form for Sales,"this.form = this.fb.group({ name: ['', Validators.required] });",Angular
+Create Angular form for Stock,"this.form = this.fb.group({ name: ['', Validators.required] });",Angular
+Create a C# class for Category,public class Category { public int Id { get; set; } public string Name { get; set; } },.NET
+Write SQL insert query for Invoice,INSERT INTO Invoice (Name) VALUES ('John');,SQL
+Create EF Core DbSet for Purchase,public DbSet<Purchase> Purchases { get; set; },.NET
+Create Angular form for Employee,"this.form = this.fb.group({ name: ['', Validators.required] });",Angular
+Write SQL insert query for Order,INSERT INTO Order (Name) VALUES ('John');,SQL
+Create EF Core DbSet for Employee,public DbSet<Employee> Employees { get; set; },.NET
+Write SQL join query between Sales and Orders,SELECT * FROM Sales e JOIN Orders o ON e.Id = o.SalesId;,SQL
+Create EF Core DbSet for Sales,public DbSet<Sales> Saless { get; set; },.NET
+Create EF Core DbSet for Purchase,public DbSet<Purchase> Purchases { get; set; },.NET
+Create Angular service for Category,"@Injectable({ providedIn: 'root' })
+export class CategoryService { constructor(private http: HttpClient) { } }",Angular
+Create Angular component for Purchase,"@Component({ selector: 'app-purchase', templateUrl: './purchase.component.html' })
+export class PurchaseComponent { }",Angular
+Write SQL join query between Sales and Orders,SELECT * FROM Sales e JOIN Orders o ON e.Id = o.SalesId;,SQL
+Create Angular form for Employee,"this.form = this.fb.group({ name: ['', Validators.required] });",Angular
+Create Angular component for Customer,"@Component({ selector: 'app-customer', templateUrl: './customer.component.html' })
+export class CustomerComponent { }",Angular
+Create a C# class for Category,public class Category { public int Id { get; set; } public string Name { get; set; } },.NET
+Create a C# class for Customer,public class Customer { public int Id { get; set; } public string Name { get; set; } },.NET
+Create EF Core DbSet for Customer,public DbSet<Customer> Customers { get; set; },.NET
+Write SQL join query between Sales and Orders,SELECT * FROM Sales e JOIN Orders o ON e.Id = o.SalesId;,SQL
+Write SQL join query between Order and Orders,SELECT * FROM Order e JOIN Orders o ON e.Id = o.OrderId;,SQL
+Create a C# class for Order,public class Order { public int Id { get; set; } public string Name { get; set; } },.NET
+Create a C# class for Employee,public class Employee { public int Id { get; set; } public string Name { get; set; } },.NET
+Create Angular component for Order,"@Component({ selector: 'app-order', templateUrl: './order.component.html' })
+export class OrderComponent { }",Angular
+Create Angular service for Sales,"@Injectable({ providedIn: 'root' })
+export class SalesService { constructor(private http: HttpClient) { } }",Angular
+Write SQL join query between Product and Orders,SELECT * FROM Product e JOIN Orders o ON e.Id = o.ProductId;,SQL
+Write SQL insert query for Product,INSERT INTO Product (Name) VALUES ('John');,SQL
+Write SQL query to get all Order,SELECT * FROM Order;,SQL
+Create a C# class for Product,public class Product { public int Id { get; set; } public string Name { get; set; } },.NET
+Create Angular component for Stock,"@Component({ selector: 'app-stock', templateUrl: './stock.component.html' })
+export class StockComponent { }",Angular
+Create Angular component for Invoice,"@Component({ selector: 'app-invoice', templateUrl: './invoice.component.html' })
+export class InvoiceComponent { }",Angular
+Create Angular service for Employee,"@Injectable({ providedIn: 'root' })
+export class EmployeeService { constructor(private http: HttpClient) { } }",Angular
+Write SQL join query between Stock and Orders,SELECT * FROM Stock e JOIN Orders o ON e.Id = o.StockId;,SQL
+Create Angular form for Category,"this.form = this.fb.group({ name: ['', Validators.required] });",Angular
+Create Angular form for Purchase,"this.form = this.fb.group({ name: ['', Validators.required] });",Angular
+Create Angular form for Stock,"this.form = this.fb.group({ name: ['', Validators.required] });",Angular
+Create a C# class for Category,public class Category { public int Id { get; set; } public string Name { get; set; } },.NET
+Create Angular form for Purchase,"this.form = this.fb.group({ name: ['', Validators.required] });",Angular
+Create a C# class for Product,public class Product { public int Id { get; set; } public string Name { get; set; } },.NET
+Write SQL join query between Stock and Orders,SELECT * FROM Stock e JOIN Orders o ON e.Id = o.StockId;,SQL
+Create Angular component for Purchase,"@Component({ selector: 'app-purchase', templateUrl: './purchase.component.html' })
+export class PurchaseComponent { }",Angular
+Create a C# class for Product,public class Product { public int Id { get; set; } public string Name { get; set; } },.NET
+Create Angular service for Employee,"@Injectable({ providedIn: 'root' })
+export class EmployeeService { constructor(private http: HttpClient) { } }",Angular
+Create Angular service for Category,"@Injectable({ providedIn: 'root' })
+export class CategoryService { constructor(private http: HttpClient) { } }",Angular
+Write SQL join query between Customer and Orders,SELECT * FROM Customer e JOIN Orders o ON e.Id = o.CustomerId;,SQL
+Write SQL insert query for Employee,INSERT INTO Employee (Name) VALUES ('John');,SQL
+Write SQL join query between Order and Orders,SELECT * FROM Order e JOIN Orders o ON e.Id = o.OrderId;,SQL
+Create Angular form for Purchase,"this.form = this.fb.group({ name: ['', Validators.required] });",Angular
+Create Angular service for Category,"@Injectable({ providedIn: 'root' })
+export class CategoryService { constructor(private http: HttpClient) { } }",Angular
+Create a C# class for Stock,public class Stock { public int Id { get; set; } public string Name { get; set; } },.NET
+Create Angular component for Product,"@Component({ selector: 'app-product', templateUrl: './product.component.html' })
+export class ProductComponent { }",Angular
+Create a C# class for Purchase,public class Purchase { public int Id { get; set; } public string Name { get; set; } },.NET
+Write SQL insert query for Product,INSERT INTO Product (Name) VALUES ('John');,SQL
+Create a C# class for Customer,public class Customer { public int Id { get; set; } public string Name { get; set; } },.NET
+Create a C# class for Purchase,public class Purchase { public int Id { get; set; } public string Name { get; set; } },.NET
+Create ASP.NET Core controller for Purchase,"[ApiController]
+[Route(""api/[controller]"")]
+public class PurchaseController : ControllerBase { }",.NET
+Write SQL insert query for Purchase,INSERT INTO Purchase (Name) VALUES ('John');,SQL
+Create EF Core DbSet for Stock,public DbSet<Stock> Stocks { get; set; },.NET
+Create Angular service for Invoice,"@Injectable({ providedIn: 'root' })
+export class InvoiceService { constructor(private http: HttpClient) { } }",Angular
+Write SQL insert query for Invoice,INSERT INTO Invoice (Name) VALUES ('John');,SQL
+Write SQL query to get all Sales,SELECT * FROM Sales;,SQL
+Create Angular component for Order,"@Component({ selector: 'app-order', templateUrl: './order.component.html' })
+export class OrderComponent { }",Angular
+Create Angular service for Category,"@Injectable({ providedIn: 'root' })
+export class CategoryService { constructor(private http: HttpClient) { } }",Angular
+Create Angular form for Customer,"this.form = this.fb.group({ name: ['', Validators.required] });",Angular
+Create a C# class for Stock,public class Stock { public int Id { get; set; } public string Name { get; set; } },.NET
+Create ASP.NET Core controller for Sales,"[ApiController]
+[Route(""api/[controller]"")]
+public class SalesController : ControllerBase { }",.NET
+Write SQL join query between Purchase and Orders,SELECT * FROM Purchase e JOIN Orders o ON e.Id = o.PurchaseId;,SQL
+Write SQL insert query for Employee,INSERT INTO Employee (Name) VALUES ('John');,SQL
+Write SQL query to get all Employee,SELECT * FROM Employee;,SQL
+Create Angular component for Purchase,"@Component({ selector: 'app-purchase', templateUrl: './purchase.component.html' })
+export class PurchaseComponent { }",Angular
+Create Angular component for Category,"@Component({ selector: 'app-category', templateUrl: './category.component.html' })
+export class CategoryComponent { }",Angular
+Create Angular form for Customer,"this.form = this.fb.group({ name: ['', Validators.required] });",Angular
+Create a C# class for Order,public class Order { public int Id { get; set; } public string Name { get; set; } },.NET
+Create Angular service for Product,"@Injectable({ providedIn: 'root' })
+export class ProductService { constructor(private http: HttpClient) { } }",Angular
+Create EF Core DbSet for Invoice,public DbSet<Invoice> Invoices { get; set; },.NET
+Create EF Core DbSet for Stock,public DbSet<Stock> Stocks { get; set; },.NET
+Create a C# class for Invoice,public class Invoice { public int Id { get; set; } public string Name { get; set; } },.NET
+Create Angular form for Employee,"this.form = this.fb.group({ name: ['', Validators.required] });",Angular
+Create Angular service for Employee,"@Injectable({ providedIn: 'root' })
+export class EmployeeService { constructor(private http: HttpClient) { } }",Angular
+Write SQL insert query for Purchase,INSERT INTO Purchase (Name) VALUES ('John');,SQL
+Create Angular component for Category,"@Component({ selector: 'app-category', templateUrl: './category.component.html' })
+export class CategoryComponent { }",Angular
+Create ASP.NET Core controller for Stock,"[ApiController]
+[Route(""api/[controller]"")]
+public class StockController : ControllerBase { }",.NET
+Write SQL query to get all Stock,SELECT * FROM Stock;,SQL
+Create EF Core DbSet for Customer,public DbSet<Customer> Customers { get; set; },.NET
+Create Angular form for Order,"this.form = this.fb.group({ name: ['', Validators.required] });",Angular
+Write SQL insert query for Customer,INSERT INTO Customer (Name) VALUES ('John');,SQL
+Write SQL insert query for Employee,INSERT INTO Employee (Name) VALUES ('John');,SQL
+Write SQL query to get all Invoice,SELECT * FROM Invoice;,SQL
+Write SQL insert query for Invoice,INSERT INTO Invoice (Name) VALUES ('John');,SQL
+Create EF Core DbSet for Employee,public DbSet<Employee> Employees { get; set; },.NET
+Create a C# class for Employee,public class Employee { public int Id { get; set; } public string Name { get; set; } },.NET
+Create ASP.NET Core controller for Purchase,"[ApiController]
+[Route(""api/[controller]"")]
+public class PurchaseController : ControllerBase { }",.NET
+Create Angular form for Invoice,"this.form = this.fb.group({ name: ['', Validators.required] });",Angular
+Create a C# class for Invoice,public class Invoice { public int Id { get; set; } public string Name { get; set; } },.NET
+Create ASP.NET Core controller for Customer,"[ApiController]
+[Route(""api/[controller]"")]
+public class CustomerController : ControllerBase { }",.NET
+Create ASP.NET Core controller for Employee,"[ApiController]
+[Route(""api/[controller]"")]
+public class EmployeeController : ControllerBase { }",.NET
+Create Angular form for Purchase,"this.form = this.fb.group({ name: ['', Validators.required] });",Angular
+Create Angular service for Purchase,"@Injectable({ providedIn: 'root' })
+export class PurchaseService { constructor(private http: HttpClient) { } }",Angular
+Create Angular form for Order,"this.form = this.fb.group({ name: ['', Validators.required] });",Angular
+Create Angular service for Invoice,"@Injectable({ providedIn: 'root' })
+export class InvoiceService { constructor(private http: HttpClient) { } }",Angular
+Create Angular component for Order,"@Component({ selector: 'app-order', templateUrl: './order.component.html' })
+export class OrderComponent { }",Angular
+Create Angular service for Customer,"@Injectable({ providedIn: 'root' })
+export class CustomerService { constructor(private http: HttpClient) { } }",Angular
+Write SQL insert query for Order,INSERT INTO Order (Name) VALUES ('John');,SQL
+Write SQL query to get all Sales,SELECT * FROM Sales;,SQL
+Write SQL join query between Stock and Orders,SELECT * FROM Stock e JOIN Orders o ON e.Id = o.StockId;,SQL
+Write SQL join query between Invoice and Orders,SELECT * FROM Invoice e JOIN Orders o ON e.Id = o.InvoiceId;,SQL
+Create ASP.NET Core controller for Category,"[ApiController]
+[Route(""api/[controller]"")]
+public class CategoryController : ControllerBase { }",.NET
+Create ASP.NET Core controller for Category,"[ApiController]
+[Route(""api/[controller]"")]
+public class CategoryController : ControllerBase { }",.NET
+Write SQL query to get all Employee,SELECT * FROM Employee;,SQL
+Write SQL insert query for Stock,INSERT INTO Stock (Name) VALUES ('John');,SQL
+Create Angular form for Product,"this.form = this.fb.group({ name: ['', Validators.required] });",Angular
+Create Angular form for Invoice,"this.form = this.fb.group({ name: ['', Validators.required] });",Angular
+Create ASP.NET Core controller for Purchase,"[ApiController]
+[Route(""api/[controller]"")]
+public class PurchaseController : ControllerBase { }",.NET
+Create ASP.NET Core controller for Purchase,"[ApiController]
+[Route(""api/[controller]"")]
+public class PurchaseController : ControllerBase { }",.NET
+Create Angular form for Invoice,"this.form = this.fb.group({ name: ['', Validators.required] });",Angular
+Write SQL join query between Purchase and Orders,SELECT * FROM Purchase e JOIN Orders o ON e.Id = o.PurchaseId;,SQL
+Create Angular service for Stock,"@Injectable({ providedIn: 'root' })
+export class StockService { constructor(private http: HttpClient) { } }",Angular
+Create Angular component for Stock,"@Component({ selector: 'app-stock', templateUrl: './stock.component.html' })
+export class StockComponent { }",Angular
+Create ASP.NET Core controller for Stock,"[ApiController]
+[Route(""api/[controller]"")]
+public class StockController : ControllerBase { }",.NET
+Write SQL join query between Customer and Orders,SELECT * FROM Customer e JOIN Orders o ON e.Id = o.CustomerId;,SQL
+Write SQL insert query for Purchase,INSERT INTO Purchase (Name) VALUES ('John');,SQL
+Write SQL query to get all Category,SELECT * FROM Category;,SQL
+Create EF Core DbSet for Purchase,public DbSet<Purchase> Purchases { get; set; },.NET
+Create a C# class for Sales,public class Sales { public int Id { get; set; } public string Name { get; set; } },.NET
+Create EF Core DbSet for Product,public DbSet<Product> Products { get; set; },.NET
+Create a C# class for Employee,public class Employee { public int Id { get; set; } public string Name { get; set; } },.NET
+Create EF Core DbSet for Product,public DbSet<Product> Products { get; set; },.NET
+Create EF Core DbSet for Purchase,public DbSet<Purchase> Purchases { get; set; },.NET
+Create Angular service for Customer,"@Injectable({ providedIn: 'root' })
+export class CustomerService { constructor(private http: HttpClient) { } }",Angular
+Create Angular service for Customer,"@Injectable({ providedIn: 'root' })
+export class CustomerService { constructor(private http: HttpClient) { } }",Angular
+Write SQL join query between Customer and Orders,SELECT * FROM Customer e JOIN Orders o ON e.Id = o.CustomerId;,SQL
+Create Angular form for Stock,"this.form = this.fb.group({ name: ['', Validators.required] });",Angular
+Create EF Core DbSet for Category,public DbSet<Category> Categorys { get; set; },.NET
+Create ASP.NET Core controller for Customer,"[ApiController]
+[Route(""api/[controller]"")]
+public class CustomerController : ControllerBase { }",.NET
+Write SQL query to get all Customer,SELECT * FROM Customer;,SQL
+Write SQL query to get all Employee,SELECT * FROM Employee;,SQL
+Write SQL insert query for Customer,INSERT INTO Customer (Name) VALUES ('John');,SQL
+Write SQL join query between Product and Orders,SELECT * FROM Product e JOIN Orders o ON e.Id = o.ProductId;,SQL
+Write SQL query to get all Stock,SELECT * FROM Stock;,SQL
+Create Angular service for Stock,"@Injectable({ providedIn: 'root' })
+export class StockService { constructor(private http: HttpClient) { } }",Angular
+Create a C# class for Product,public class Product { public int Id { get; set; } public string Name { get; set; } },.NET
+Create a C# class for Product,public class Product { public int Id { get; set; } public string Name { get; set; } },.NET
+Write SQL insert query for Category,INSERT INTO Category (Name) VALUES ('John');,SQL
+Write SQL query to get all Product,SELECT * FROM Product;,SQL
+Write SQL query to get all Sales,SELECT * FROM Sales;,SQL
+Write SQL insert query for Stock,INSERT INTO Stock (Name) VALUES ('John');,SQL
+Write SQL insert query for Product,INSERT INTO Product (Name) VALUES ('John');,SQL
+Create EF Core DbSet for Customer,public DbSet<Customer> Customers { get; set; },.NET
+Write SQL join query between Employee and Orders,SELECT * FROM Employee e JOIN Orders o ON e.Id = o.EmployeeId;,SQL
+Create Angular form for Employee,"this.form = this.fb.group({ name: ['', Validators.required] });",Angular
+Create Angular service for Employee,"@Injectable({ providedIn: 'root' })
+export class EmployeeService { constructor(private http: HttpClient) { } }",Angular
+Create a C# class for Sales,public class Sales { public int Id { get; set; } public string Name { get; set; } },.NET
+Create ASP.NET Core controller for Employee,"[ApiController]
+[Route(""api/[controller]"")]
+public class EmployeeController : ControllerBase { }",.NET
+Write SQL insert query for Sales,INSERT INTO Sales (Name) VALUES ('John');,SQL
+Write SQL query to get all Order,SELECT * FROM Order;,SQL
+Write SQL query to get all Invoice,SELECT * FROM Invoice;,SQL
+Create Angular component for Employee,"@Component({ selector: 'app-employee', templateUrl: './employee.component.html' })
+export class EmployeeComponent { }",Angular
+Write SQL join query between Purchase and Orders,SELECT * FROM Purchase e JOIN Orders o ON e.Id = o.PurchaseId;,SQL
+Write SQL query to get all Employee,SELECT * FROM Employee;,SQL
+Create Angular service for Invoice,"@Injectable({ providedIn: 'root' })
+export class InvoiceService { constructor(private http: HttpClient) { } }",Angular
+Create EF Core DbSet for Customer,public DbSet<Customer> Customers { get; set; },.NET
+Create EF Core DbSet for Sales,public DbSet<Sales> Saless { get; set; },.NET
+Create Angular form for Order,"this.form = this.fb.group({ name: ['', Validators.required] });",Angular
+Write SQL join query between Customer and Orders,SELECT * FROM Customer e JOIN Orders o ON e.Id = o.CustomerId;,SQL
+Write SQL insert query for Employee,INSERT INTO Employee (Name) VALUES ('John');,SQL
+Create a C# class for Stock,public class Stock { public int Id { get; set; } public string Name { get; set; } },.NET
+Write SQL join query between Stock and Orders,SELECT * FROM Stock e JOIN Orders o ON e.Id = o.StockId;,SQL
+Create a C# class for Invoice,public class Invoice { public int Id { get; set; } public string Name { get; set; } },.NET
+Create Angular service for Employee,"@Injectable({ providedIn: 'root' })
+export class EmployeeService { constructor(private http: HttpClient) { } }",Angular
+Create Angular component for Employee,"@Component({ selector: 'app-employee', templateUrl: './employee.component.html' })
+export class EmployeeComponent { }",Angular
+Create ASP.NET Core controller for Stock,"[ApiController]
+[Route(""api/[controller]"")]
+public class StockController : ControllerBase { }",.NET
+Create Angular component for Sales,"@Component({ selector: 'app-sales', templateUrl: './sales.component.html' })
+export class SalesComponent { }",Angular
+Write SQL insert query for Order,INSERT INTO Order (Name) VALUES ('John');,SQL
+Create Angular service for Product,"@Injectable({ providedIn: 'root' })
+export class ProductService { constructor(private http: HttpClient) { } }",Angular
+Write SQL query to get all Customer,SELECT * FROM Customer;,SQL
+Create Angular component for Order,"@Component({ selector: 'app-order', templateUrl: './order.component.html' })
+export class OrderComponent { }",Angular
+Create ASP.NET Core controller for Stock,"[ApiController]
+[Route(""api/[controller]"")]
+public class StockController : ControllerBase { }",.NET
+Create ASP.NET Core controller for Customer,"[ApiController]
+[Route(""api/[controller]"")]
+public class CustomerController : ControllerBase { }",.NET
+Create Angular form for Category,"this.form = this.fb.group({ name: ['', Validators.required] });",Angular
+Write SQL query to get all Stock,SELECT * FROM Stock;,SQL
+Create EF Core DbSet for Customer,public DbSet<Customer> Customers { get; set; },.NET
+Create Angular service for Invoice,"@Injectable({ providedIn: 'root' })
+export class InvoiceService { constructor(private http: HttpClient) { } }",Angular
+Write SQL join query between Employee and Orders,SELECT * FROM Employee e JOIN Orders o ON e.Id = o.EmployeeId;,SQL
+Create a C# class for Customer,public class Customer { public int Id { get; set; } public string Name { get; set; } },.NET
+Create a C# class for Customer,public class Customer { public int Id { get; set; } public string Name { get; set; } },.NET
+Create ASP.NET Core controller for Customer,"[ApiController]
+[Route(""api/[controller]"")]
+public class CustomerController : ControllerBase { }",.NET
+Create Angular component for Stock,"@Component({ selector: 'app-stock', templateUrl: './stock.component.html' })
+export class StockComponent { }",Angular
+Create EF Core DbSet for Product,public DbSet<Product> Products { get; set; },.NET
+Create Angular component for Stock,"@Component({ selector: 'app-stock', templateUrl: './stock.component.html' })
+export class StockComponent { }",Angular
+Write SQL query to get all Invoice,SELECT * FROM Invoice;,SQL
+Create Angular form for Stock,"this.form = this.fb.group({ name: ['', Validators.required] });",Angular
+Create EF Core DbSet for Sales,public DbSet<Sales> Saless { get; set; },.NET
+Write SQL insert query for Customer,INSERT INTO Customer (Name) VALUES ('John');,SQL
+Create ASP.NET Core controller for Stock,"[ApiController]
+[Route(""api/[controller]"")]
+public class StockController : ControllerBase { }",.NET
+Create Angular form for Invoice,"this.form = this.fb.group({ name: ['', Validators.required] });",Angular
+Create ASP.NET Core controller for Customer,"[ApiController]
+[Route(""api/[controller]"")]
+public class CustomerController : ControllerBase { }",.NET
+Write SQL join query between Order and Orders,SELECT * FROM Order e JOIN Orders o ON e.Id = o.OrderId;,SQL
+Write SQL insert query for Purchase,INSERT INTO Purchase (Name) VALUES ('John');,SQL
+Create a C# class for Purchase,public class Purchase { public int Id { get; set; } public string Name { get; set; } },.NET
+Write SQL join query between Customer and Orders,SELECT * FROM Customer e JOIN Orders o ON e.Id = o.CustomerId;,SQL
+Write SQL join query between Product and Orders,SELECT * FROM Product e JOIN Orders o ON e.Id = o.ProductId;,SQL
+Create Angular form for Order,"this.form = this.fb.group({ name: ['', Validators.required] });",Angular
+Create a C# class for Purchase,public class Purchase { public int Id { get; set; } public string Name { get; set; } },.NET
+Write SQL insert query for Category,INSERT INTO Category (Name) VALUES ('John');,SQL
+Create EF Core DbSet for Order,public DbSet<Order> Orders { get; set; },.NET
+Write SQL join query between Customer and Orders,SELECT * FROM Customer e JOIN Orders o ON e.Id = o.CustomerId;,SQL
+Create EF Core DbSet for Employee,public DbSet<Employee> Employees { get; set; },.NET
+Write SQL insert query for Purchase,INSERT INTO Purchase (Name) VALUES ('John');,SQL
+Create Angular service for Customer,"@Injectable({ providedIn: 'root' })
+export class CustomerService { constructor(private http: HttpClient) { } }",Angular
+Create Angular form for Invoice,"this.form = this.fb.group({ name: ['', Validators.required] });",Angular
+Write SQL query to get all Customer,SELECT * FROM Customer;,SQL
+Create ASP.NET Core controller for Sales,"[ApiController]
+[Route(""api/[controller]"")]
+public class SalesController : ControllerBase { }",.NET
+Create ASP.NET Core controller for Product,"[ApiController]
+[Route(""api/[controller]"")]
+public class ProductController : ControllerBase { }",.NET
+Write SQL insert query for Invoice,INSERT INTO Invoice (Name) VALUES ('John');,SQL
+Create EF Core DbSet for Purchase,public DbSet<Purchase> Purchases { get; set; },.NET
+Create ASP.NET Core controller for Product,"[ApiController]
+[Route(""api/[controller]"")]
+public class ProductController : ControllerBase { }",.NET
+Create Angular service for Employee,"@Injectable({ providedIn: 'root' })
+export class EmployeeService { constructor(private http: HttpClient) { } }",Angular
+Create ASP.NET Core controller for Order,"[ApiController]
+[Route(""api/[controller]"")]
+public class OrderController : ControllerBase { }",.NET
+Create Angular service for Order,"@Injectable({ providedIn: 'root' })
+export class OrderService { constructor(private http: HttpClient) { } }",Angular
+Create Angular form for Product,"this.form = this.fb.group({ name: ['', Validators.required] });",Angular
+Create EF Core DbSet for Employee,public DbSet<Employee> Employees { get; set; },.NET
+Write SQL join query between Sales and Orders,SELECT * FROM Sales e JOIN Orders o ON e.Id = o.SalesId;,SQL
+Create Angular service for Product,"@Injectable({ providedIn: 'root' })
+export class ProductService { constructor(private http: HttpClient) { } }",Angular
+Create a C# class for Customer,public class Customer { public int Id { get; set; } public string Name { get; set; } },.NET
+Create a C# class for Employee,public class Employee { public int Id { get; set; } public string Name { get; set; } },.NET
+Create Angular component for Order,"@Component({ selector: 'app-order', templateUrl: './order.component.html' })
+export class OrderComponent { }",Angular
+Write SQL query to get all Order,SELECT * FROM Order;,SQL
+Create Angular service for Customer,"@Injectable({ providedIn: 'root' })
+export class CustomerService { constructor(private http: HttpClient) { } }",Angular
+Create ASP.NET Core controller for Employee,"[ApiController]
+[Route(""api/[controller]"")]
+public class EmployeeController : ControllerBase { }",.NET
+Create Angular service for Employee,"@Injectable({ providedIn: 'root' })
+export class EmployeeService { constructor(private http: HttpClient) { } }",Angular
+Create a C# class for Purchase,public class Purchase { public int Id { get; set; } public string Name { get; set; } },.NET
+Write SQL insert query for Employee,INSERT INTO Employee (Name) VALUES ('John');,SQL
+Create ASP.NET Core controller for Order,"[ApiController]
+[Route(""api/[controller]"")]
+public class OrderController : ControllerBase { }",.NET
+Create Angular component for Product,"@Component({ selector: 'app-product', templateUrl: './product.component.html' })
+export class ProductComponent { }",Angular
+Write SQL insert query for Purchase,INSERT INTO Purchase (Name) VALUES ('John');,SQL
+Create a C# class for Sales,public class Sales { public int Id { get; set; } public string Name { get; set; } },.NET
+Create EF Core DbSet for Employee,public DbSet<Employee> Employees { get; set; },.NET
+Create EF Core DbSet for Purchase,public DbSet<Purchase> Purchases { get; set; },.NET
+Create Angular component for Order,"@Component({ selector: 'app-order', templateUrl: './order.component.html' })
+export class OrderComponent { }",Angular
+Create EF Core DbSet for Purchase,public DbSet<Purchase> Purchases { get; set; },.NET
+Create a C# class for Employee,public class Employee { public int Id { get; set; } public string Name { get; set; } },.NET
+Create EF Core DbSet for Employee,public DbSet<Employee> Employees { get; set; },.NET
+Create Angular service for Customer,"@Injectable({ providedIn: 'root' })
+export class CustomerService { constructor(private http: HttpClient) { } }",Angular
+Create Angular component for Order,"@Component({ selector: 'app-order', templateUrl: './order.component.html' })
+export class OrderComponent { }",Angular
+Write SQL query to get all Category,SELECT * FROM Category;,SQL
+Create Angular component for Category,"@Component({ selector: 'app-category', templateUrl: './category.component.html' })
+export class CategoryComponent { }",Angular
+Create Angular component for Product,"@Component({ selector: 'app-product', templateUrl: './product.component.html' })
+export class ProductComponent { }",Angular
+Create Angular service for Purchase,"@Injectable({ providedIn: 'root' })
+export class PurchaseService { constructor(private http: HttpClient) { } }",Angular
+Write SQL join query between Stock and Orders,SELECT * FROM Stock e JOIN Orders o ON e.Id = o.StockId;,SQL
+Create ASP.NET Core controller for Product,"[ApiController]
+[Route(""api/[controller]"")]
+public class ProductController : ControllerBase { }",.NET
+Write SQL join query between Purchase and Orders,SELECT * FROM Purchase e JOIN Orders o ON e.Id = o.PurchaseId;,SQL
+Write SQL join query between Customer and Orders,SELECT * FROM Customer e JOIN Orders o ON e.Id = o.CustomerId;,SQL
+Write SQL join query between Invoice and Orders,SELECT * FROM Invoice e JOIN Orders o ON e.Id = o.InvoiceId;,SQL
+Create a C# class for Product,public class Product { public int Id { get; set; } public string Name { get; set; } },.NET
+Create Angular form for Invoice,"this.form = this.fb.group({ name: ['', Validators.required] });",Angular
+Create EF Core DbSet for Category,public DbSet<Category> Categorys { get; set; },.NET
+Create Angular form for Employee,"this.form = this.fb.group({ name: ['', Validators.required] });",Angular
+Write SQL join query between Purchase and Orders,SELECT * FROM Purchase e JOIN Orders o ON e.Id = o.PurchaseId;,SQL
+Create ASP.NET Core controller for Product,"[ApiController]
+[Route(""api/[controller]"")]
+public class ProductController : ControllerBase { }",.NET
+Create Angular form for Order,"this.form = this.fb.group({ name: ['', Validators.required] });",Angular
+Create EF Core DbSet for Customer,public DbSet<Customer> Customers { get; set; },.NET
+Create Angular form for Invoice,"this.form = this.fb.group({ name: ['', Validators.required] });",Angular
+Create Angular form for Stock,"this.form = this.fb.group({ name: ['', Validators.required] });",Angular
+Write SQL query to get all Invoice,SELECT * FROM Invoice;,SQL
+Create a C# class for Order,public class Order { public int Id { get; set; } public string Name { get; set; } },.NET
+Write SQL join query between Category and Orders,SELECT * FROM Category e JOIN Orders o ON e.Id = o.CategoryId;,SQL
+Create ASP.NET Core controller for Sales,"[ApiController]
+[Route(""api/[controller]"")]
+public class SalesController : ControllerBase { }",.NET
+Create Angular form for Customer,"this.form = this.fb.group({ name: ['', Validators.required] });",Angular
+Write SQL insert query for Product,INSERT INTO Product (Name) VALUES ('John');,SQL
+Create ASP.NET Core controller for Sales,"[ApiController]
+[Route(""api/[controller]"")]
+public class SalesController : ControllerBase { }",.NET
+Write SQL query to get all Category,SELECT * FROM Category;,SQL
+Create Angular service for Category,"@Injectable({ providedIn: 'root' })
+export class CategoryService { constructor(private http: HttpClient) { } }",Angular
+Create Angular component for Invoice,"@Component({ selector: 'app-invoice', templateUrl: './invoice.component.html' })
+export class InvoiceComponent { }",Angular
+Create EF Core DbSet for Purchase,public DbSet<Purchase> Purchases { get; set; },.NET
+Create a C# class for Stock,public class Stock { public int Id { get; set; } public string Name { get; set; } },.NET
+Write SQL insert query for Category,INSERT INTO Category (Name) VALUES ('John');,SQL
+Create EF Core DbSet for Product,public DbSet<Product> Products { get; set; },.NET
+Create Angular form for Order,"this.form = this.fb.group({ name: ['', Validators.required] });",Angular
+Create Angular component for Category,"@Component({ selector: 'app-category', templateUrl: './category.component.html' })
+export class CategoryComponent { }",Angular
+Write SQL insert query for Purchase,INSERT INTO Purchase (Name) VALUES ('John');,SQL
+Create Angular service for Order,"@Injectable({ providedIn: 'root' })
+export class OrderService { constructor(private http: HttpClient) { } }",Angular
+Create Angular component for Purchase,"@Component({ selector: 'app-purchase', templateUrl: './purchase.component.html' })
+export class PurchaseComponent { }",Angular
+Create Angular form for Stock,"this.form = this.fb.group({ name: ['', Validators.required] });",Angular
+Create Angular service for Category,"@Injectable({ providedIn: 'root' })
+export class CategoryService { constructor(private http: HttpClient) { } }",Angular
+Create a C# class for Product,public class Product { public int Id { get; set; } public string Name { get; set; } },.NET
+Create Angular service for Purchase,"@Injectable({ providedIn: 'root' })
+export class PurchaseService { constructor(private http: HttpClient) { } }",Angular
+Create Angular service for Product,"@Injectable({ providedIn: 'root' })
+export class ProductService { constructor(private http: HttpClient) { } }",Angular
+Create a C# class for Customer,public class Customer { public int Id { get; set; } public string Name { get; set; } },.NET
+Write SQL insert query for Purchase,INSERT INTO Purchase (Name) VALUES ('John');,SQL
+Create ASP.NET Core controller for Employee,"[ApiController]
+[Route(""api/[controller]"")]
+public class EmployeeController : ControllerBase { }",.NET
+Create a C# class for Product,public class Product { public int Id { get; set; } public string Name { get; set; } },.NET
+Create ASP.NET Core controller for Stock,"[ApiController]
+[Route(""api/[controller]"")]
+public class StockController : ControllerBase { }",.NET
+Create Angular service for Stock,"@Injectable({ providedIn: 'root' })
+export class StockService { constructor(private http: HttpClient) { } }",Angular
+Create a C# class for Employee,public class Employee { public int Id { get; set; } public string Name { get; set; } },.NET
+Write SQL insert query for Employee,INSERT INTO Employee (Name) VALUES ('John');,SQL
+Create Angular component for Sales,"@Component({ selector: 'app-sales', templateUrl: './sales.component.html' })
+export class SalesComponent { }",Angular
+Create ASP.NET Core controller for Employee,"[ApiController]
+[Route(""api/[controller]"")]
+public class EmployeeController : ControllerBase { }",.NET
+Write SQL query to get all Category,SELECT * FROM Category;,SQL
+Create Angular component for Order,"@Component({ selector: 'app-order', templateUrl: './order.component.html' })
+export class OrderComponent { }",Angular
+Create Angular form for Customer,"this.form = this.fb.group({ name: ['', Validators.required] });",Angular
+Create Angular service for Employee,"@Injectable({ providedIn: 'root' })
+export class EmployeeService { constructor(private http: HttpClient) { } }",Angular
+Write SQL join query between Purchase and Orders,SELECT * FROM Purchase e JOIN Orders o ON e.Id = o.PurchaseId;,SQL
+Create ASP.NET Core controller for Order,"[ApiController]
+[Route(""api/[controller]"")]
+public class OrderController : ControllerBase { }",.NET
+Write SQL join query between Invoice and Orders,SELECT * FROM Invoice e JOIN Orders o ON e.Id = o.InvoiceId;,SQL
+Write SQL query to get all Stock,SELECT * FROM Stock;,SQL
+Create Angular component for Stock,"@Component({ selector: 'app-stock', templateUrl: './stock.component.html' })
+export class StockComponent { }",Angular
+Create a C# class for Customer,public class Customer { public int Id { get; set; } public string Name { get; set; } },.NET
+Create EF Core DbSet for Order,public DbSet<Order> Orders { get; set; },.NET
+Write SQL query to get all Purchase,SELECT * FROM Purchase;,SQL
+Create Angular form for Sales,"this.form = this.fb.group({ name: ['', Validators.required] });",Angular
+Create EF Core DbSet for Employee,public DbSet<Employee> Employees { get; set; },.NET
+Write SQL insert query for Invoice,INSERT INTO Invoice (Name) VALUES ('John');,SQL
+Create Angular component for Stock,"@Component({ selector: 'app-stock', templateUrl: './stock.component.html' })
+export class StockComponent { }",Angular
+Create Angular service for Category,"@Injectable({ providedIn: 'root' })
+export class CategoryService { constructor(private http: HttpClient) { } }",Angular
+Write SQL query to get all Order,SELECT * FROM Order;,SQL
+Create Angular service for Product,"@Injectable({ providedIn: 'root' })
+export class ProductService { constructor(private http: HttpClient) { } }",Angular
+Create Angular component for Customer,"@Component({ selector: 'app-customer', templateUrl: './customer.component.html' })
+export class CustomerComponent { }",Angular
+Write SQL query to get all Order,SELECT * FROM Order;,SQL
+Create Angular service for Employee,"@Injectable({ providedIn: 'root' })
+export class EmployeeService { constructor(private http: HttpClient) { } }",Angular
+Create Angular component for Category,"@Component({ selector: 'app-category', templateUrl: './category.component.html' })
+export class CategoryComponent { }",Angular
+Write SQL join query between Stock and Orders,SELECT * FROM Stock e JOIN Orders o ON e.Id = o.StockId;,SQL
+Create Angular component for Customer,"@Component({ selector: 'app-customer', templateUrl: './customer.component.html' })
+export class CustomerComponent { }",Angular
+Create EF Core DbSet for Stock,public DbSet<Stock> Stocks { get; set; },.NET
+Write SQL join query between Sales and Orders,SELECT * FROM Sales e JOIN Orders o ON e.Id = o.SalesId;,SQL
+Write SQL join query between Sales and Orders,SELECT * FROM Sales e JOIN Orders o ON e.Id = o.SalesId;,SQL
+Write SQL query to get all Sales,SELECT * FROM Sales;,SQL
+Create ASP.NET Core controller for Employee,"[ApiController]
+[Route(""api/[controller]"")]
+public class EmployeeController : ControllerBase { }",.NET
+Write SQL insert query for Category,INSERT INTO Category (Name) VALUES ('John');,SQL
+Create ASP.NET Core controller for Stock,"[ApiController]
+[Route(""api/[controller]"")]
+public class StockController : ControllerBase { }",.NET
+Write SQL insert query for Sales,INSERT INTO Sales (Name) VALUES ('John');,SQL
+Write SQL join query between Sales and Orders,SELECT * FROM Sales e JOIN Orders o ON e.Id = o.SalesId;,SQL
+Write SQL insert query for Employee,INSERT INTO Employee (Name) VALUES ('John');,SQL
+Create EF Core DbSet for Category,public DbSet<Category> Categorys { get; set; },.NET
+Write SQL query to get all Sales,SELECT * FROM Sales;,SQL
+Write SQL insert query for Sales,INSERT INTO Sales (Name) VALUES ('John');,SQL
+Write SQL insert query for Sales,INSERT INTO Sales (Name) VALUES ('John');,SQL
+Create Angular form for Invoice,"this.form = this.fb.group({ name: ['', Validators.required] });",Angular
+Write SQL insert query for Category,INSERT INTO Category (Name) VALUES ('John');,SQL
+Write SQL insert query for Product,INSERT INTO Product (Name) VALUES ('John');,SQL
+Create Angular component for Product,"@Component({ selector: 'app-product', templateUrl: './product.component.html' })
+export class ProductComponent { }",Angular
+Write SQL join query between Customer and Orders,SELECT * FROM Customer e JOIN Orders o ON e.Id = o.CustomerId;,SQL
+Create Angular form for Sales,"this.form = this.fb.group({ name: ['', Validators.required] });",Angular
+Create Angular form for Customer,"this.form = this.fb.group({ name: ['', Validators.required] });",Angular
+Create ASP.NET Core controller for Category,"[ApiController]
+[Route(""api/[controller]"")]
+public class CategoryController : ControllerBase { }",.NET
+Create EF Core DbSet for Stock,public DbSet<Stock> Stocks { get; set; },.NET
+Create Angular component for Product,"@Component({ selector: 'app-product', templateUrl: './product.component.html' })
+export class ProductComponent { }",Angular
+Create a C# class for Customer,public class Customer { public int Id { get; set; } public string Name { get; set; } },.NET
+Create Angular component for Purchase,"@Component({ selector: 'app-purchase', templateUrl: './purchase.component.html' })
+export class PurchaseComponent { }",Angular
+Write SQL insert query for Employee,INSERT INTO Employee (Name) VALUES ('John');,SQL
+Create a C# class for Sales,public class Sales { public int Id { get; set; } public string Name { get; set; } },.NET
+Create Angular component for Order,"@Component({ selector: 'app-order', templateUrl: './order.component.html' })
+export class OrderComponent { }",Angular
+Create ASP.NET Core controller for Order,"[ApiController]
+[Route(""api/[controller]"")]
+public class OrderController : ControllerBase { }",.NET
+Create Angular component for Sales,"@Component({ selector: 'app-sales', templateUrl: './sales.component.html' })
+export class SalesComponent { }",Angular
+Write SQL query to get all Product,SELECT * FROM Product;,SQL
+Create Angular component for Employee,"@Component({ selector: 'app-employee', templateUrl: './employee.component.html' })
+export class EmployeeComponent { }",Angular
+Write SQL join query between Order and Orders,SELECT * FROM Order e JOIN Orders o ON e.Id = o.OrderId;,SQL
+Write SQL join query between Category and Orders,SELECT * FROM Category e JOIN Orders o ON e.Id = o.CategoryId;,SQL
+Create Angular service for Order,"@Injectable({ providedIn: 'root' })
+export class OrderService { constructor(private http: HttpClient) { } }",Angular
+Create Angular service for Category,"@Injectable({ providedIn: 'root' })
+export class CategoryService { constructor(private http: HttpClient) { } }",Angular
+Create EF Core DbSet for Employee,public DbSet<Employee> Employees { get; set; },.NET
+Create Angular component for Sales,"@Component({ selector: 'app-sales', templateUrl: './sales.component.html' })
+export class SalesComponent { }",Angular
+Create a C# class for Customer,public class Customer { public int Id { get; set; } public string Name { get; set; } },.NET
+Create ASP.NET Core controller for Customer,"[ApiController]
+[Route(""api/[controller]"")]
+public class CustomerController : ControllerBase { }",.NET
+Create Angular service for Product,"@Injectable({ providedIn: 'root' })
+export class ProductService { constructor(private http: HttpClient) { } }",Angular
+Write SQL insert query for Sales,INSERT INTO Sales (Name) VALUES ('John');,SQL
+Write SQL join query between Category and Orders,SELECT * FROM Category e JOIN Orders o ON e.Id = o.CategoryId;,SQL
+Write SQL join query between Stock and Orders,SELECT * FROM Stock e JOIN Orders o ON e.Id = o.StockId;,SQL
+Write SQL join query between Order and Orders,SELECT * FROM Order e JOIN Orders o ON e.Id = o.OrderId;,SQL
+Create Angular service for Purchase,"@Injectable({ providedIn: 'root' })
+export class PurchaseService { constructor(private http: HttpClient) { } }",Angular
+Create EF Core DbSet for Stock,public DbSet<Stock> Stocks { get; set; },.NET
+Write SQL insert query for Order,INSERT INTO Order (Name) VALUES ('John');,SQL
+Create Angular component for Purchase,"@Component({ selector: 'app-purchase', templateUrl: './purchase.component.html' })
+export class PurchaseComponent { }",Angular
+Write SQL join query between Customer and Orders,SELECT * FROM Customer e JOIN Orders o ON e.Id = o.CustomerId;,SQL
+Create Angular component for Category,"@Component({ selector: 'app-category', templateUrl: './category.component.html' })
+export class CategoryComponent { }",Angular
+Create a C# class for Order,public class Order { public int Id { get; set; } public string Name { get; set; } },.NET
+Create EF Core DbSet for Product,public DbSet<Product> Products { get; set; },.NET
+Create Angular component for Order,"@Component({ selector: 'app-order', templateUrl: './order.component.html' })
+export class OrderComponent { }",Angular
+Create EF Core DbSet for Stock,public DbSet<Stock> Stocks { get; set; },.NET
+Write SQL query to get all Stock,SELECT * FROM Stock;,SQL
+Create Angular component for Product,"@Component({ selector: 'app-product', templateUrl: './product.component.html' })
+export class ProductComponent { }",Angular
+Create Angular service for Stock,"@Injectable({ providedIn: 'root' })
+export class StockService { constructor(private http: HttpClient) { } }",Angular
+Create a C# class for Stock,public class Stock { public int Id { get; set; } public string Name { get; set; } },.NET
+Create a C# class for Stock,public class Stock { public int Id { get; set; } public string Name { get; set; } },.NET
+Write SQL insert query for Category,INSERT INTO Category (Name) VALUES ('John');,SQL
+Write SQL join query between Customer and Orders,SELECT * FROM Customer e JOIN Orders o ON e.Id = o.CustomerId;,SQL
+Create Angular service for Category,"@Injectable({ providedIn: 'root' })
+export class CategoryService { constructor(private http: HttpClient) { } }",Angular
+Create Angular service for Invoice,"@Injectable({ providedIn: 'root' })
+export class InvoiceService { constructor(private http: HttpClient) { } }",Angular
+Create Angular form for Employee,"this.form = this.fb.group({ name: ['', Validators.required] });",Angular
+Create Angular form for Stock,"this.form = this.fb.group({ name: ['', Validators.required] });",Angular
+Create a C# class for Purchase,public class Purchase { public int Id { get; set; } public string Name { get; set; } },.NET
+Write SQL join query between Product and Orders,SELECT * FROM Product e JOIN Orders o ON e.Id = o.ProductId;,SQL
+Create Angular component for Stock,"@Component({ selector: 'app-stock', templateUrl: './stock.component.html' })
+export class StockComponent { }",Angular
+Write SQL join query between Sales and Orders,SELECT * FROM Sales e JOIN Orders o ON e.Id = o.SalesId;,SQL
+Create a C# class for Category,public class Category { public int Id { get; set; } public string Name { get; set; } },.NET
+Create Angular component for Sales,"@Component({ selector: 'app-sales', templateUrl: './sales.component.html' })
+export class SalesComponent { }",Angular
+Create ASP.NET Core controller for Employee,"[ApiController]
+[Route(""api/[controller]"")]
+public class EmployeeController : ControllerBase { }",.NET
+Create a C# class for Stock,public class Stock { public int Id { get; set; } public string Name { get; set; } },.NET
+Create Angular form for Product,"this.form = this.fb.group({ name: ['', Validators.required] });",Angular
+Write SQL query to get all Employee,SELECT * FROM Employee;,SQL
+Create a C# class for Customer,public class Customer { public int Id { get; set; } public string Name { get; set; } },.NET
+Write SQL query to get all Invoice,SELECT * FROM Invoice;,SQL
+Create EF Core DbSet for Customer,public DbSet<Customer> Customers { get; set; },.NET
+Create Angular form for Stock,"this.form = this.fb.group({ name: ['', Validators.required] });",Angular
+Create Angular service for Customer,"@Injectable({ providedIn: 'root' })
+export class CustomerService { constructor(private http: HttpClient) { } }",Angular
+Write SQL join query between Employee and Orders,SELECT * FROM Employee e JOIN Orders o ON e.Id = o.EmployeeId;,SQL
+Write SQL query to get all Invoice,SELECT * FROM Invoice;,SQL
+Write SQL insert query for Stock,INSERT INTO Stock (Name) VALUES ('John');,SQL
+Write SQL insert query for Category,INSERT INTO Category (Name) VALUES ('John');,SQL
+Create Angular form for Order,"this.form = this.fb.group({ name: ['', Validators.required] });",Angular
+Write SQL insert query for Product,INSERT INTO Product (Name) VALUES ('John');,SQL
+Create Angular component for Order,"@Component({ selector: 'app-order', templateUrl: './order.component.html' })
+export class OrderComponent { }",Angular
+Create ASP.NET Core controller for Stock,"[ApiController]
+[Route(""api/[controller]"")]
+public class StockController : ControllerBase { }",.NET
+Write SQL query to get all Order,SELECT * FROM Order;,SQL
+Create EF Core DbSet for Customer,public DbSet<Customer> Customers { get; set; },.NET
+Write SQL join query between Customer and Orders,SELECT * FROM Customer e JOIN Orders o ON e.Id = o.CustomerId;,SQL
+Write SQL join query between Category and Orders,SELECT * FROM Category e JOIN Orders o ON e.Id = o.CategoryId;,SQL
+Write SQL join query between Category and Orders,SELECT * FROM Category e JOIN Orders o ON e.Id = o.CategoryId;,SQL
+Create ASP.NET Core controller for Invoice,"[ApiController]
+[Route(""api/[controller]"")]
+public class InvoiceController : ControllerBase { }",.NET
+Create a C# class for Category,public class Category { public int Id { get; set; } public string Name { get; set; } },.NET
+Create Angular component for Employee,"@Component({ selector: 'app-employee', templateUrl: './employee.component.html' })
+export class EmployeeComponent { }",Angular
